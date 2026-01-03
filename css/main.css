@@ -32,17 +32,16 @@ body {
 }
 
 .imgp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;  /* Größe des inneren Rings */
-  height: 120px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 55%;  /* این باعث میشه عکس با دایره هماهنگ باشه */
+    height: 55%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 10;
 }
-
 
 .nav {
   position: sticky; top: 0; backdrop-filter: blur(8px);
