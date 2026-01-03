@@ -31,6 +31,20 @@ body {
   height: 100%;
 }
 
+.hero__orbit {
+    position: relative;
+    width: 220px;  /* یا هر سایزی که می‌خواید */
+    height: 220px;
+    margin: auto;
+}
+
+.orbit-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* استایل عکس - مهمترین قسمت */
 .imgp {
     position: absolute;
     top: 50%;
