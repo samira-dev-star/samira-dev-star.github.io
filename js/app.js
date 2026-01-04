@@ -16,3 +16,39 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.card').forEach(el => observer.observe(el));
+
+// ---------------------------------------------------------------
+// Certificates
+
+  // Filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const certCards = document.querySelectorAll('.cert-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      certCards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Auto-scroll
+  const carousel = document.querySelector('.cert-carousel');
+  let scrollInterval;
+  document.querySelector('.play').addEventListener('click', () => {
+    clearInterval(scrollInterval);
+    scrollInterval = setInterval(() => {
+      carousel.scrollBy({ left: 2, behavior: 'smooth' });
+    }, 30);
+  });
+  document.querySelector('.slow').addEventListener('click', () => {
+    clearInterval(scrollInterval);
+    scrollInterval = setInterval(() => {
+      carousel.scrollBy({ left: 1, behavior: 'smooth' });
+    }, 60);
+  });
+// ----------------------------------------------------------------------------

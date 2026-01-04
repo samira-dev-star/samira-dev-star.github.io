@@ -234,39 +234,119 @@
 
   <!-- ----------------------------------------------------------------------------------- -->
 
-  <section id="certs" class="section">
+<section id="certs" class="section">
   <div class="section__head">
     <h2>Zertifikate & Nachweise</h2>
-    <p>Offizielle Zertifikate, Kurse und Erfolge.</p>
+    <p>Offizielle Zertifikate, Kurse und Erfolge aus verschiedenen Plattformen.</p>
   </div>
 
+  <!-- Filter Buttons -->
   <div class="cert-filter">
-    <button class="filter-btn active">Alle Zertifikate</button>
-    <button class="filter-btn">LinkedIn</button>
-    <button class="filter-btn">Harvard</button>
-    <!-- Add more filters as needed -->
+    <button class="filter-btn active" data-filter="all">Alle Zertifikate</button>
+    <button class="filter-btn" data-filter="Harvard">Harvard</button>
+    <button class="filter-btn" data-filter="LinkedIn">LinkedIn</button>
+    <button class="filter-btn" data-filter="Intellipaat">Intellipaat</button>
+    <button class="filter-btn" data-filter="TVTO">TVTO</button>
+    <button class="filter-btn" data-filter="Urbino">Urbino</button>
+    <button class="filter-btn" data-filter="Iran Digital">Iran Digital</button>
   </div>
 
+  <!-- Certificate Carousel -->
   <div class="cert-carousel">
-    <div class="cert-card" data-platform="LinkedIn">
-      <img src="images/cert1-preview.png" alt="Data Analytics Zertifikat">
-      <h3>Data Analytics</h3>
-      <p>LinkedIn Learning</p>
-      <a href="images/cert1.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    <!-- Harvard Certificates -->
+    <div class="cert-card" data-platform="Harvard">
+      <h3>CS50X</h3><p>Harvard University</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/CS50X.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
     </div>
-    <div class="cert-card" data-platform="LinkedIn">
-      <img src="images/cert2-preview.png" alt="Career Skills Zertifikat">
-      <h3>Career Skills</h3>
-      <p>LinkedIn Learning</p>
-      <a href="images/cert2.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    <div class="cert-card" data-platform="Harvard">
+      <h3>CS50P for Python</h3><p>Harvard University</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/CS50Pforpython.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
     </div>
-    <!-- Add more cards -->
+    <div class="cert-card" data-platform="Harvard">
+      <h3>CS50S</h3><p>Harvard University</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/CS50S.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Harvard">
+      <h3>CS50SQL</h3><p>Harvard University</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/CS50SQL.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="cert-card" data-platform="LinkedIn">
+      <h3>Career Skills in Software</h3><p>LinkedIn Learning</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/CertificateOfCompletion_Introduction_to_Career_Skills_in_Software.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+
+    <!-- Urbino -->
+    <div class="cert-card" data-platform="Urbino">
+      <h3>Coding in Biblioteca</h3><p>Università di Urbino</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/Coding_in_Biblioteca-Certificato_di_completamento_13416.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Urbino">
+      <h3>Coding per Genitori</h3><p>Università di Urbino</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/Coding_per_genitori-Certificato_di_completamento_13417.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+
+    <!-- Iran Digital -->
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Django Project</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/Django.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Store Project</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/StoreProject.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Python Certificate</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/python.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Python with 4 Projects</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/pythonwith4projectscertificate.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Excel Table Drawing</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/table_draw_excel.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Understand Programming</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/understand_programming_certificate.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>CSS Certificate</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/css-certificate.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>HTML Certificate</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/html-certificate.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Iran Digital">
+      <h3>Word Certificate</h3><p>Iran Digital</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/word-certificate.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+
+    <!-- TVTO -->
+    <div class="cert-card" data-platform="TVTO">
+      <h3>Vocational Certificate (Python)</h3><p>TVTO Iran</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/VocationalCertificatepython.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+
+        <!-- Intellipaat -->
+    <div class="cert-card" data-platform="Intellipaat">
+      <h3>Intellipaat Certificate 2</h3><p>Intellipaat Academy</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/intellipaat_com_academy_certificate_link_Yz0NTkQzNjU9MjY0ODkuMjV4dD0x.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
+    <div class="cert-card" data-platform="Intellipaat">
+      <h3>Intellipaat Certificate 3</h3><p>Intellipaat Academy</p>
+      <a href="https://github.com/samira-dev-star/CV-Resume/blob/main/certificates/programming_IT_certificates/intellipaat_com_academy_certificate_link_Yz0yNTgxJnU9MjY0ODkuMjV4dD0x.pdf" target="_blank" class="btn tiny">PDF ansehen</a>
+    </div>
   </div>
 
+  <!-- Controls -->
   <div class="cert-controls">
     <button class="btn play">Play</button>
     <button class="btn slow">Slow Down</button>
-    <a href="https://github.com/yourprofile/certificates" class="btn view-all" target="_blank">Alle Zertifikate auf GitHub →</a>
+    <a href="https://github.com/samira-dev-star/CV-Resume/tree/main/certificates/programming_IT_certificates" class="btn view-all" target="_blank">Alle Zertifikate auf GitHub →</a>
   </div>
 </section>
 
