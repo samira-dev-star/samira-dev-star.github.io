@@ -21,34 +21,57 @@ document.querySelectorAll('.card').forEach(el => observer.observe(el));
 // Certificates
 
   // Filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const certCards = document.querySelectorAll('.cert-card');
+// Certificate Filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const certCards = document.querySelectorAll('.cert-card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Reset active state
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-      certCards.forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'block' : 'none';
-      });
+    const filter = btn.dataset.filter;
+
+    // Show/hide cards based on filter
+    certCards.forEach(card => {
+      if (filter === 'all' || card.dataset.platform === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
   });
+});
 
-  // Auto-scroll
-  const carousel = document.querySelector('.cert-carousel');
-  let scrollInterval;
-  document.querySelector('.play').addEventListener('click', () => {
-    clearInterval(scrollInterval);
-    scrollInterval = setInterval(() => {
-      carousel.scrollBy({ left: 2, behavior: 'smooth' });
-    }, 30);
-  });
-  document.querySelector('.slow').addEventListener('click', () => {
-    clearInterval(scrollInterval);
-    scrollInterval = setInterval(() => {
-      carousel.scrollBy({ left: 1, behavior: 'smooth' });
-    }, 60);
-  });
+// Auto-scroll Controls
+const carousel = document.querySelector('.cert-carousel');
+let scrollInterval;
+
+// Helper to start scrolling
+function startScroll(speed, delay) {
+  clearInterval(scrollInterval);
+  scrollInterval = setInterval(() => {
+    carousel.scrollBy({ left: speed, behavior: 'smooth' });
+  }, delay);
+}
+
+// Play (normal speed)
+document.querySelector('.play').addEventListener('click', () => {
+  startScroll(2, 30); // scroll 2px every 30ms
+});
+
+// Slow Down
+document.querySelector('.slow').addEventListener('click', () => {
+  startScroll(1, 60); // scroll 1px every 60ms
+});
+
+// Speed Up
+document.querySelector('.fast').addEventListener('click', () => {
+  startScroll(4, 20); // scroll 4px every 20ms
+});
+
+// Stop scrolling when user interacts manually
+carousel.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+carousel.addEventListener('mouseleave', () => clearInterval(scrollInterval));
 // ----------------------------------------------------------------------------
