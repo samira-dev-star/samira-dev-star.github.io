@@ -2262,3 +2262,177 @@ a {
     font-size: 0.85rem !important;
   }
 }
+
+/* ==================== دکمه همبرگر منو ==================== */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 200;
+  padding: 4px;
+  background: transparent;
+  border: none;
+}
+
+.mobile-menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+  transform-origin: center;
+}
+
+/* حالت فعال (X) */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background: var(--ring);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background: var(--ring);
+}
+
+/* Overlay پس‌زمینه */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 125;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ==================== ریسپانسیو منو ==================== */
+@media (max-width: 768px) {
+
+  /* نمایش دکمه همبرگر */
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  /* منوی اصلی - حالت بسته */
+  .nav nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(14, 15, 19, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 100px 24px 40px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid var(--border);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    z-index: 150;
+    gap: 12px;
+  }
+
+  /* منوی باز */
+  .nav nav.active {
+    right: 0 !important;
+  }
+
+  /* استایل لینک‌های منوی موبایل */
+  .nav nav a {
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .nav nav a:hover {
+    background: rgba(169, 51, 255, 0.1);
+    border-color: var(--primary);
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* انیمیشن slide-in برای لینک‌ها */
+  .nav nav.active a:nth-child(1) {
+    transition-delay: 0.1s;
+    transform: translateX(0);
+  }
+
+  .nav nav.active a:nth-child(2) {
+    transition-delay: 0.15s;
+    transform: translateX(0);
+  }
+
+  .nav nav.active a:nth-child(3) {
+    transition-delay: 0.2s;
+    transform: translateX(0);
+  }
+
+  .nav nav.active a:nth-child(4) {
+    transition-delay: 0.25s;
+    transform: translateX(0);
+  }
+
+  .nav nav.active a:nth-child(5) {
+    transition-delay: 0.3s;
+    transform: translateX(0);
+  }
+
+  .nav nav.active a:nth-child(6) {
+    transition-delay: 0.35s;
+    transform: translateX(0);
+  }
+
+  /* دکمه زبان در منوی موبایل */
+  #langBtn {
+    margin: 24px 20px 0 !important;
+    background: rgba(169, 51, 255, 0.15) !important;
+    border: 1px solid var(--primary) !important;
+    border-radius: 10px !important;
+    align-self: center !important;
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    text-align: center !important;
+    padding: 14px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* موبایل کوچک */
+@media (max-width: 480px) {
+  .mobile-menu-toggle {
+    width: 24px;
+    height: 18px;
+  }
+
+  .nav nav {
+    width: 85%;
+    padding: 90px 20px 30px;
+  }
+
+  .nav nav a {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+}
