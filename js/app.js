@@ -45,7 +45,15 @@ filterBtns.forEach(btn => {
 
 // Auto-scroll Controls
 const carousel = document.querySelector('.cert-carousel');
-let scrollInterval;
+let scrollSpeed = 0;
+let isScrolling = false;
+
+// Continuous scroll loop
+function scrollLoop() {
+  if (!isScrolling) return;
+  carousel.scrollLeft += scrollSpeed;
+  requestAnimationFrame(scrollLoop);
+}
 
 function startScroll(speed, delay) {
   clearInterval(scrollInterval);
