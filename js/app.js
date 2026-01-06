@@ -18,10 +18,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.card').forEach(el => observer.observe(el));
 
 // ---------------------------------------------------------------
-// Certificates
-
-  // Filtering
-// Certificate Filtering
+// Certificates Filtering
 const filterBtns = document.querySelectorAll('.filter-btn');
 const certCards = document.querySelectorAll('.cert-card');
 
@@ -35,43 +32,60 @@ filterBtns.forEach(btn => {
 
     // Show/hide cards based on filter
     certCards.forEach(card => {
-      if (filter === 'all' || card.dataset.platform === filter) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'block' : 'none';
     });
   });
 });
 
 // Auto-scroll Controls
 const carousel = document.querySelector('.cert-carousel');
-let scrollInterval;
+let scrollSpeed = 0;
+let isScrolling = false;
 
-// Helper to start scrolling
-function startScroll(speed, delay) {
-  clearInterval(scrollInterval);
-  scrollInterval = setInterval(() => {
-    carousel.scrollBy({ left: speed, behavior: 'smooth' });
-  }, delay);
+// Continuous scroll loop
+function scrollLoop() {
+  if (!isScrolling) return;
+  carousel.scrollLeft += scrollSpeed;
+  requestAnimationFrame(scrollLoop);
+}
+
+// Start scrolling with given speed
+function startScroll(speed) {
+  scrollSpeed = speed;
+  if (!isScrolling) {
+    isScrolling = true;
+    requestAnimationFrame(scrollLoop);
+  }
+}
+
+// Stop scrolling
+function stopScroll() {
+  isScrolling = false;
+  scrollSpeed = 0;
 }
 
 // Play (normal speed)
 document.querySelector('.play').addEventListener('click', () => {
-  startScroll(2, 30); // scroll 2px every 30ms
+  startScroll(2); // scroll 2px per frame
 });
 
 // Slow Down
 document.querySelector('.slow').addEventListener('click', () => {
-  startScroll(1, 60); // scroll 1px every 60ms
+  startScroll(1); // scroll 1px per frame
 });
 
 // Speed Up
 document.querySelector('.fast').addEventListener('click', () => {
-  startScroll(4, 20); // scroll 4px every 20ms
+  startScroll(4); // scroll 4px per frame
 });
 
-// Stop scrolling when user interacts manually
-carousel.addEventListener('mouseenter', () => clearInterval(scrollInterval));
-carousel.addEventListener('mouseleave', () => clearInterval(scrollInterval));
+// Optional Stop button (if you add one in HTML)
+const stopBtn = document.querySelector('.stop');
+if (stopBtn) {
+  stopBtn.addEventListener('click', stopScroll);
+}
+
+// Also stop when user manually scrolls with mouse/touch
+carousel.addEventListener('wheel', stopScroll);
+carousel.addEventListener('touchstart', stopScroll);
 // ----------------------------------------------------------------------------
