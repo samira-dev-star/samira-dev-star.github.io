@@ -332,7 +332,7 @@ const translations = {
                 urbino: "Urbino",
                 irandigital: "Iran Digital"
             },
-            view: "View PDF",
+            view: "View",
             controls: {
                 play: "Play",
                 slow: "Slow Down",

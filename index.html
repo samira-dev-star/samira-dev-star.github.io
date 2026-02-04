@@ -7,10 +7,81 @@
   <title>Samira Mashti Zadeh</title>
   <meta name="description"
     content="Animationen, Programmierprojekte und professionelle Zertifikate von Samira Mashti Zadeh." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com ">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400 ;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
   <link rel="icon" href="./images/main/favicon.png" type="image/png">
+  <style>
+    /* Certificates Dynamic Loading Styles */
+    .loading-certs {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+
+    .cert-preview {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-card:hover .cert-preview img {
+      transform: scale(1.05);
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      min-width: 250px;
+      flex-shrink: 0;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .error-message {
+      text-align: center;
+      padding: 2rem;
+      color: #e74c3c;
+    }
+
+    .cert-preview img[src*="placeholder"] {
+      opacity: 0.5;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,14 +101,14 @@
     <!-- ID اضافه شد -->
     <nav id="mainNav">
       <a href="#hero" data-i18n="nav.home">Heim</a>
-      
+
       <a href="#animations" data-i18n="nav.animations">Animationen</a>
       <a href="#projects" data-i18n="nav.projects">Projekte</a>
       <a href="#about" data-i18n="nav.about">Über mich</a>
       <a href="#certs" data-i18n="nav.certs">Zertifikate</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
       <a href="">
-      <button id="langBtn" class="btn ghost" data-i18n="nav.lang" data-lang="en">🌐 EN</button>
+        <button id="langBtn" class="btn ghost" data-i18n="nav.lang" data-lang="en">🌐 EN</button>
       </a>
     </nav>
   </header>
@@ -50,7 +121,7 @@
       <div class="hero__cta">
         <a class="btn primary" href="#projects" data-i18n="hero.cta.projects">Projekte ansehen</a>
         <a class="btn ghost" href="#animations" data-i18n="hero.cta.animations">Animationen ansehen</a>
-        <a class="btn ghost" href="https://github.com/samira-dev-star" target="_blank" rel="noopener"
+        <a class="btn ghost" href="https://github.com/samira-dev-star " target="_blank" rel="noopener"
           data-i18n="hero.cta.github">GitHub Profil</a>
       </div>
     </div>
@@ -59,7 +130,7 @@
         <circle cx="100" cy="100" r="100" class="ring"></circle>
         <circle cx="100" cy="100" r="120" class="ring ring--2"></circle>
       </svg>
-      
+
     </div>
   </section>
 
@@ -128,7 +199,7 @@
             <span>Python</span><span>Jupyter</span><span>Deep Learning</span><span>Fast api</span>
           </div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/tb-chest-xray-classifier" target="_blank"
+            <a class="btn small" href="https://github.com/samira-dev-star/tb-chest-xray-classifier " target="_blank"
               rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
@@ -142,7 +213,7 @@
             <span>Django</span><span>Html/css</span><span>Tailwind</span><span>MySQL</span><span>AJAX</span><span>jquery</span>
           </div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/royal-clinic-project" target="_blank"
+            <a class="btn small" href="https://github.com/samira-dev-star/royal-clinic-project " target="_blank"
               rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
@@ -154,8 +225,8 @@
           <p data-i18n="projects.card3.description">Ein interaktives Scratch-Spiel mit kreativer Story.</p>
           <div class="tags"><span>Scratch</span><span>Game Design</span></div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/The-Magic-Wish-A-Scratch-Game" target="_blank"
-              rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
+            <a class="btn small" href="https://github.com/samira-dev-star/The-Magic-Wish-A-Scratch-Game "
+              target="_blank" rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
       </article>
@@ -167,7 +238,7 @@
           </p>
           <div class="tags"><span>Python</span><span>SQL</span><span>CLI</span></div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/library-manager" target="_blank"
+            <a class="btn small" href="https://github.com/samira-dev-star/library-manager " target="_blank"
               rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
@@ -179,7 +250,7 @@
           <p data-i18n="projects.card5.description">Benachrichtigungssystem mit Python zur Echtzeit-Kommunikation.</p>
           <div class="tags"><span>Python</span><span>Realtime</span></div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/real-time-notification" target="_blank"
+            <a class="btn small" href="https://github.com/samira-dev-star/real-time-notification " target="_blank"
               rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
@@ -191,7 +262,7 @@
           <p data-i18n="projects.card6.description">E-Commerce-Plattform mit Admin-Panel und responsivem Design.</p>
           <div class="tags"><span>Django</span><span>CSS</span><span>mysql</span><span>ajax</span></div>
           <div class="actions">
-            <a class="btn small" href="https://github.com/samira-dev-star/django_online_shop-master" target="_blank"
+            <a class="btn small" href="https://github.com/samira-dev-star/django_online_shop-master " target="_blank"
               rel="noopener" data-i18n="projects.view">Projekt anzeigen</a>
           </div>
         </div>
@@ -199,18 +270,18 @@
     </div>
 
     <div class="button-center-container">
-      <a href="https://github.com/samira-dev-star?tab=repositories" target="_blank">
+      <a href="https://github.com/samira-dev-star?tab=repositories " target="_blank">
         <button class="btn primary btn-show-more" data-i18n="projects.more">Weitere Projekte</button>
       </a>
     </div>
   </section>
-  
+
   <section id="about" class="section alt about-section">
     <div class="section__head">
       <h2 data-i18n="about.title">Über mich</h2>
       <p class="about-subtitle" data-i18n="about.subtitle">Full-Stack Developer · 3D Animator</p>
     </div>
-  
+
     <div class="about-content">
       <div class="about-text">
         <p class="about-main-text" data-i18n="about.main_text">
@@ -221,7 +292,7 @@
           Meine Reise begann mit der Automatisierung komplexer Prozesse...
         </p>
       </div>
-  
+
       <div class="about-photo">
         <img src="images/main/personal-photo.png" alt="Samira Mashti Zadeh" class="personal-photo">
       </div>
@@ -237,162 +308,56 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Key Skills -->
     <div class="key-skills-section">
       <h3 class="skills-title" style="text-align: center;">Key Skills</h3>
       <div>
-      <div class="skills-list">
-        <span class="skill-item">Python</span>
-        <span class="skill-item">Django</span>
-        <span class="skill-item">FastAPI</span>
-        <span class="skill-item">Ajax</span>
-        <span class="skill-item">SQL</span>
-        <span class="skill-item">SQLAlchemy</span>
-        <span class="skill-item">MongoDB</span>
-        <span class="skill-item">Git</span>
-        <span class="skill-item">BlenderApp</span>
-        <span class="skill-item">3D-Max</span>
-        <span class="skill-item">Auto-cad</span>
-        <span class="skill-item">Adobe</span>
-        <span class="skill-item">Krita</span>
-        <span class="skill-item">Microsoft-office</span>
-        
-
-  
-        <!-- اسکیل‌های بیشتر اضافه کن -->
-      </div>
+        <div class="skills-list">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">Django</span>
+          <span class="skill-item">FastAPI</span>
+          <span class="skill-item">Ajax</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">SQLAlchemy</span>
+          <span class="skill-item">MongoDB</span>
+          <span class="skill-item">Git</span>
+          <span class="skill-item">BlenderApp</span>
+          <span class="skill-item">3D-Max</span>
+          <span class="skill-item">Auto-cad</span>
+          <span class="skill-item">Adobe</span>
+          <span class="skill-item">Krita</span>
+          <span class="skill-item">Microsoft-office</span>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- بخش گواهینامه‌ها با بارگذاری داینامیک -->
   <section id="certs" class="section">
     <div class="section__head">
       <h2 data-i18n="certs.title">Zertifikate & Nachweise</h2>
       <p data-i18n="certs.subtitle">Offizielle Zertifikate, Kurse und Erfolge aus verschiedenen Plattformen.</p>
     </div>
-    <div class="cert-filter">
+
+    <!-- فیلترها به صورت داینامیک ایجاد می‌شوند -->
+    <div class="cert-filter" id="certFilters">
       <button class="filter-btn active" data-filter="all" data-i18n="certs.filter.all">Alle Zertifikate</button>
-      <button class="filter-btn" data-filter="Harvard" data-i18n="certs.filter.harvard">Harvard</button>
-      <button class="filter-btn" data-filter="LinkedIn" data-i18n="certs.filter.linkedin">LinkedIn</button>
-      <button class="filter-btn" data-filter="Intellipaat" data-i18n="certs.filter.intellipaat">Intellipaat</button>
-      <button class="filter-btn" data-filter="TVTO" data-i18n="certs.filter.tvto">TVTO</button>
-      <button class="filter-btn" data-filter="Urbino" data-i18n="certs.filter.urbino">Urbino</button>
-      <button class="filter-btn" data-filter="Iran Digital" data-i18n="certs.filter.irandigital">Iran Digital</button>
     </div>
-    <div class="cert-carousel">
-      <div class="cert-card" data-platform="Harvard">
-        <h3>CS50X</h3>
-        <p>Harvard University</p><a href="images/certificates/programming/CS50X.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Harvard">
-        <h3>CS50P for Python</h3>
-        <p>Harvard University</p><a href="images/certificates/programming/CS50forpython.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Harvard">
-        <h3>CS50S</h3>
-        <p>Harvard University</p><a href="images/certificates/programming/CS50S.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Harvard">
-        <h3>CS50SQL</h3>
-        <p>Harvard University</p><a href="images/certificates/programming/CS50SQL.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="LinkedIn">
-        <h3>Career Skills in Software</h3>
-        <p>LinkedIn Learning</p><a
-          href="images/certificates/programming/CertificateOfCompletion_Introduction_to_Career_Skills_in_Software.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Urbino">
-        <h3>Coding in Biblioteca</h3>
-        <p>Università di Urbino</p><a
-          href="images/certificates/programming/Coding_in_Biblioteca-Certificato_di_completamento_13416.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Urbino">
-        <h3>Coding per Genitori</h3>
-        <p>Università di Urbino</p><a
-          href="images/certificates/programming/Coding_per_genitori-Certificato_di_completamento_13417.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Django Project</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/Django.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Store Project</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/StoreProject.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Python Certificate</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/python.pdf" target="_blank" class="btn tiny"
-          data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Python with 4 Projects</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/pythonwith4projectscertificate.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Excel Table Drawing</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/table_draw_excel.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Understand Programming</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/understand_programming_certificate.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>CSS Certificate</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/css-certificate.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>HTML Certificate</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/html-certificate.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Iran Digital">
-        <h3>Word Certificate</h3>
-        <p>Iran Digital</p><a href="images/certificates/programming/word-certificate.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="TVTO">
-        <h3>Vocational Certificate (Python)</h3>
-        <p>TVTO Iran</p><a href="images/certificates/programming/VocationalCertificatepython.pdf" target="_blank"
-          class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Intellipaat">
-        <h3>Intellipaat Certificate 1</h3>
-        <p>Intellipaat Academy</p><a
-          href="images/certificates/programming/intellipaat_com_academy_certificate_link_Yz0MTkmdT0yNjQ4OTEmZxhOPTE=.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Intellipaat">
-        <h3>Intellipaat Certificate 2</h3>
-        <p>Intellipaat Academy</p><a
-          href="images/certificates/programming/intellipaat_com_academy_certificate_link_Yz0NTkQzNjU9MjY0ODkuMjV4dD0x.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
-      </div>
-      <div class="cert-card" data-platform="Intellipaat">
-        <h3>Intellipaat Certificate 3</h3>
-        <p>Intellipaat Academy</p><a
-          href="images/certificates/programming/intellipaat_com_academy_certificate_link_Yz0yNTgxJnU9MjY0ODkuMjV4dD0x.pdf"
-          target="_blank" class="btn tiny" data-i18n="certs.view">PDF ansehen</a>
+
+    <!-- کارت‌ها به صورت داینامیک پر می‌شوند -->
+    <div class="cert-carousel" id="certContainer">
+      <div class="loading-certs">
+        <p>Loading certificates...</p>
       </div>
     </div>
+
     <div class="cert-controls">
       <button class="btn play" data-i18n="certs.controls.play">Play</button>
       <button class="btn slow" data-i18n="certs.controls.slow">Slow Down</button>
       <button class="btn fast" data-i18n="certs.controls.fast">Speed Up</button>
-      <a href="https://github.com/samira-dev-star/CV-Resume/tree/main/certificates/programming_IT_certificates"
-        class="btn view-all" target="_blank" data-i18n="certs.controls.view_all">Alle Zertifikate auf GitHub →</a>
+      <a href="https://github.com/samira-dev-star/samira-dev-star/tree/main/Certificate" class="btn view-all"
+        target="_blank" data-i18n="certs.controls.view_all">Alle Zertifikate auf GitHub →</a>
     </div>
   </section>
 
@@ -402,26 +367,26 @@
       <p data-i18n="contact.subtitle">Schreib mir für Zusammenarbeit oder Austausch.</p>
     </div>
     <div class="socials">
-      <a href="https://github.com/samira-dev-star" aria-label="GitHub" target="_blank">
+      <a href="https://github.com/samira-dev-star " aria-label="GitHub" target="_blank">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
         </svg>
         <span data-i18n="contact.github">GitHub</span>
       </a>
-      <a href="https://www.linkedin.com/in/samira-mashtizadeh-06457a388/" aria-label="LinkedIn" target="_blank">
+      <a href="https://www.linkedin.com/in/samira-mashtizadeh-06457a388/ " aria-label="LinkedIn" target="_blank">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
         <span data-i18n="contact.linkedin">LinkedIn</span>
       </a>
-      <a href="mailto:samira@example.com" aria-label="Email" target="_blank">
+      <a href="mailto:Sammashtizadeh@gmail.com" aria-label="Email" target="_blank">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
         </svg>
-        <span data-i18n="Sammashtizadeh@gmail.com">Email</span>
+        <span data-i18n="contact.email">Email</span>
       </a>
       <a href="tel:+980373615913" aria-label="Phone" class="phone-link">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -430,14 +395,14 @@
         </svg>
         <span data-i18n="contact.phone">Mobile</span>
       </a>
-      <a href="https://web.whatsapp.com/Samira-dev-star" aria-label="WhatsApp" target="_blank">
+      <a href="https://web.whatsapp.com/Samira-dev-star " aria-label="WhatsApp" target="_blank">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.297-.01-.47-.01-.173 0-.445.064-.678.319-.232.254-.893.873-.893 2.128 0 1.255.916 2.468 1.044 2.636.128.168 1.8 2.747 4.368 3.856.61.264 1.086.423 1.457.538.613.194 1.171.166 1.612.101.494-.073 1.525-.623 1.742-1.225.217-.602.217-1.118.152-1.225-.064-.107-.232-.168-.529-.317zM20.52 3.476c-.95-.902-2.203-1.4-3.536-1.4-1.348 0-2.62.51-3.595 1.437L3.44 14.123c-.49.49-.85 1.1-1.04 1.77l-.65 2.97c-.2.92.64 1.73 1.54 1.54l2.97-.65c.67-.19 1.28-.55 1.77-1.04l10.76-10.76c.93-.93 1.437-2.246 1.437-3.595 0-1.332-.498-2.585-1.4-3.536z" />
         </svg>
         <span data-i18n="contact.whatsapp">WhatsApp</span>
       </a>
-      <a href="https://t.me/SamiraMashtiZadeh" aria-label="Telegram" target="_blank">
+      <a href="https://t.me/SamiraMashtiZadeh " aria-label="Telegram" target="_blank">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M9.78 18.65l.28-4.23l7.68-6.92c.78-.7-.36-1.08-1.12-.4L7.2 14.2L3.02 12.8c-.76-.25-.74-.76.1-1.12l17.5-6.75c.7-.28 1.35.33 1.08 1.05L19.5 20.3c-.13.34-.5.5-.84.36l-4.5-1.8l-3.4 2.04c-.41.24-.94.03-1.08-.45z" />
@@ -450,6 +415,229 @@
   <footer class="footer">
     <p data-i18n="footer.text">© Samira Mashti Zadeh — Portfolio. Mit Liebe zum Detail erstellt.</p>
   </footer>
+
+  <!-- اسکریپت بارگذاری گواهینامه‌ها -->
+  <script>
+    /**
+     * Certificates Loader - Dynamic loading from GitHub
+     * Loads certificates from GitHub repository structure
+     */
+    class CertificatesLoader {
+      constructor() {
+        this.owner = 'samira-dev-star';
+        this.repo = 'samira-dev-star';
+        this.branch = 'main';
+        this.basePath = 'Certificate';
+        this.apiBase = 'https://api.github.com/repos';
+        this.rawBase = 'https://raw.githubusercontent.com';
+
+        this.platforms = new Map(); // Map folder name to display name
+        this.certificates = [];
+
+        this.container = document.getElementById('certContainer');
+        this.filterContainer = document.getElementById('certFilters');
+
+        // Mapping folder names to display platform names
+        this.platformMapping = {
+          'CS50': 'Harvard',
+          'LINKEDIN-LEARNING': 'LinkedIn',
+          'Urbino-Carlo': 'Urbino',
+          'IRAN-DIGITAL': 'Iran Digital',
+          'Iran-Technical-and-Vocational-Training-Organization-(TVTO)': 'TVTO',
+          'intellipaat': 'Intellipaat',
+          'Darsman': 'Darsman',
+          'Faraders': 'Faraders',
+          'Daneshjooyar': 'Daneshjooyar',
+          'CAOIRI': 'CAOIRI',
+          'IRCS': 'IRCS',
+          'MSRT-of-Iran': 'MSRT',
+          'َACECR': 'ACECR'
+        };
+      }
+
+      // Get platform display name from folder name
+      getPlatformFromFolder(folderName) {
+        return this.platformMapping[folderName] || folderName;
+      }
+
+      // Format certificate name from filename
+      formatCertificateName(filename) {
+        // Remove extension
+        let name = filename.replace(/\.(png|jpg|jpeg|pdf)$/i, '');
+
+        // Replace dashes and underscores with spaces
+        name = name.replace(/[-_]/g, ' ');
+
+        // Capitalize each word
+        return name.replace(/\b\w/g, l => l.toUpperCase());
+      }
+
+      // Fetch directory contents from GitHub API
+      async fetchDirectoryContents(path) {
+        const url = `${this.apiBase}/${this.owner}/${this.repo}/contents/${path}?ref=${this.branch}`;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            if (response.status === 403) {
+              throw new Error('API rate limit exceeded. Please try again later.');
+            }
+            throw new Error(`HTTP ${response.status}`);
+          }
+          return await response.json();
+        } catch (error) {
+          console.error(`Error fetching ${path}:`, error);
+          throw error;
+        }
+      }
+
+      // Recursively scan folders for certificates
+      async scanForCertificates() {
+        const certificates = [];
+
+        try {
+          // Get main Certificate folder contents
+          const rootContents = await this.fetchDirectoryContents(this.basePath);
+
+          for (const item of rootContents) {
+            if (item.type === 'dir') {
+              const platform = this.getPlatformFromFolder(item.name);
+              this.platforms.set(item.name, platform);
+
+              try {
+                // Get folder contents
+                const folderContents = await this.fetchDirectoryContents(item.path);
+
+                for (const file of folderContents) {
+                  if (file.type === 'file' && /\.(png|jpg|jpeg|pdf)$/i.test(file.name)) {
+                    certificates.push({
+                      name: this.formatCertificateName(file.name),
+                      platform: platform,
+                      folder: item.name,
+                      url: file.download_url,
+                      githubUrl: file.html_url,
+                      filename: file.name
+                    });
+                  }
+                }
+              } catch (error) {
+                console.warn(`Could not load certificates from ${item.name}:`, error);
+              }
+            }
+          }
+        } catch (error) {
+          console.error('Error scanning certificates:', error);
+          throw error;
+        }
+
+        return certificates.sort((a, b) => a.platform.localeCompare(b.platform) || a.name.localeCompare(b.name));
+      }
+
+      // Create HTML for certificate card
+      createCertCard(cert) {
+        const isPdf = cert.filename.toLowerCase().endsWith('.pdf');
+        const previewContent = isPdf
+          ? `<div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #666; font-size: 3rem;">📄</div>`
+          : `<img src="${cert.url}" alt="${cert.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\\'display: flex; align-items: center; justify-content: center; height: 100%; color: #999;\\'>📜</div>'">`;
+
+        return `
+          <div class="cert-card" data-platform="${cert.platform}">
+            <div class="cert-preview">
+              ${previewContent}
+            </div>
+            <h3>${cert.name}</h3>
+            <p>${cert.platform}</p>
+            <a href="${cert.githubUrl}" target="_blank" class="btn tiny" data-i18n="certs.view">ansehen</a>
+          </div>
+        `;
+      }
+
+      // Create filter buttons
+      createFilterButtons() {
+        // Get unique platform names
+        const uniquePlatforms = [...new Set(this.platforms.values())].sort();
+
+        let html = `<button class="filter-btn active" data-filter="all" data-i18n="certs.filter.all">Alle Zertifikate</button>`;
+
+        uniquePlatforms.forEach(platform => {
+          html += `<button class="filter-btn" data-filter="${platform}">${platform}</button>`;
+        });
+
+        return html;
+      }
+
+      // Setup filter functionality
+      setupFilters() {
+        const buttons = this.filterContainer.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            // Remove active from all
+            buttons.forEach(b => b.classList.remove('active'));
+            // Add active to clicked
+            e.target.classList.add('active');
+
+            const filter = e.target.dataset.filter;
+            this.filterCertificates(filter);
+          });
+        });
+      }
+
+      // Filter certificates
+      filterCertificates(platform) {
+        const cards = this.container.querySelectorAll('.cert-card');
+
+        cards.forEach(card => {
+          if (platform === 'all' || card.dataset.platform === platform) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeIn 0.3s ease-in';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      // Main load function
+      async load() {
+        try {
+          this.certificates = await this.scanForCertificates();
+
+          if (this.certificates.length === 0) {
+            this.container.innerHTML = '<div class="error-message">No certificates found.</div>';
+            return;
+          }
+
+          // Populate filters
+          this.filterContainer.innerHTML = this.createFilterButtons();
+
+          // Populate container
+          this.container.innerHTML = this.certificates
+            .map(cert => this.createCertCard(cert))
+            .join('');
+
+          // Setup filters
+          this.setupFilters();
+
+          console.log(`Loaded ${this.certificates.length} certificates from ${this.platforms.size} platforms`);
+
+        } catch (error) {
+          console.error('Error loading certificates:', error);
+          this.container.innerHTML = `
+            <div class="error-message">
+              Error loading certificates: ${error.message}<br>
+              <small>Please refresh the page to try again.</small>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const loader = new CertificatesLoader();
+      loader.load();
+    });
+  </script>
 
   <script src="js/app.js"></script>
   <script src="js/translation-index.js"></script>

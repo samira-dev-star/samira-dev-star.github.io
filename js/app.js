@@ -28,32 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Certificates
-const filterBtns = document.querySelectorAll('.filter-btn');
-const certCards = document.querySelectorAll('.cert-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    certCards.forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.platform === filter) ? 'block' : 'none';
-    });
-  });
-});
-
-// Auto-scroll Controls
+// Auto-scroll Controls برای کاروسل گواهینامه‌ها
 const carousel = document.querySelector('.cert-carousel');
-let scrollSpeed = 0;
-let isScrolling = false;
-
-// Continuous scroll loop
-function scrollLoop() {
-  if (!isScrolling) return;
-  carousel.scrollLeft += scrollSpeed;
-  requestAnimationFrame(scrollLoop);
-}
+let scrollInterval;
 
 function startScroll(speed, delay) {
   clearInterval(scrollInterval);
@@ -79,5 +56,3 @@ document.querySelector('.contact')?.addEventListener('submit', (e) => {
   btn.textContent = 'Wird gesendet...';
   btn.disabled = true;
 });
-
-

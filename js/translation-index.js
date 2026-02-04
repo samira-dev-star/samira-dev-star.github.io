@@ -92,7 +92,7 @@ const translations = {
                 urbino: "Urbino",
                 irandigital: "Iran Digital"
             },
-            view: "PDF ansehen",
+            view: "ansehen",
             controls: {
                 play: "Play",
                 slow: "Slow Down",
@@ -204,7 +204,7 @@ const translations = {
                 urbino: "Urbino",
                 irandigital: "Iran Digital"
             },
-            view: "View PDF",
+            view: "View",
             controls: {
                 play: "Play",
                 slow: "Slow Down",
