@@ -3056,3 +3056,131 @@ a {
     font-size: 0.85rem;
   }
 }
+
+
+
+/* Certificates Dynamic Loading Styles */
+.loading-certs {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+/* استایل اصلی کارت گواهینامه - ارتفاع ثابت */
+.cert-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
+  height: 380px;
+  /* ارتفاع ثابت برای تمام کارت‌ها */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* بخش پیش‌نمایش تصویر - ارتفاع ثابت */
+.cert-preview {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-preview img {
+  transform: scale(1.05);
+}
+
+/* عنوان گواهینامه - حداکثر ۲ خط */
+.cert-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+  height: 2.8em;
+  /* حداکثر ۲ خط */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
+}
+
+/* نام پلتفرم - یک خط */
+.cert-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  height: 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* دکمه در پایین کارت */
+.cert-card .btn {
+  margin-top: auto;
+  /* فشار دادن دکمه به پایین */
+  align-self: flex-start;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+}
+
+.cert-preview img[src*="placeholder"] {
+  opacity: 0.5;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* PDF آیکون استایل */
+.cert-preview div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  color: #6c757d;
+  font-size: 3rem;
+}
