@@ -56,3 +56,5 @@ document.querySelector('.contact')?.addEventListener('submit', (e) => {
   btn.textContent = 'Wird gesendet...';
   btn.disabled = true;
 });
+
+
