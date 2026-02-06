@@ -3128,17 +3128,16 @@ a {
 
 /* بخش پیش‌نمایش تصویر - ارتفاع ثابت */
 .cert-preview {
-  width: 100%;
-  height: 160px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  background: var(--bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
 
 .cert-preview img {
   width: 100%;
@@ -3166,7 +3165,15 @@ a {
   -webkit-box-orient: vertical;
   flex-shrink: 0;
 }
-
+.cert-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 250px;
+    flex-shrink: 0;
+        }
 /* نام پلتفرم - یک خط */
 .cert-card p {
   color: var(--text-secondary);
@@ -3223,3 +3230,9 @@ a {
   font-size: 3rem;
 }
 
+.cert-preview img[src*="placeholder"] {
+    opacity: 0.5;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+        }
