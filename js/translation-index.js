@@ -1,17 +1,19 @@
-// js/app.js - Fixed bilingual implementation
+// js/translation-index.js - Complete Bilingual Implementation
 
-// Translation dictionary
 const translations = {
     de: {
+        // Navigation
         nav: {
             home: "Start",
-            about: "Über mich",
             animations: "Animationen",
             projects: "Projekte",
+            about: "Über mich",
             certs: "Zertifikate",
             contact: "Kontakt",
             lang: "🌐 EN"
         },
+
+        // Hero Section
         hero: {
             title: "Visuelle Erlebnisse & sauberes Coding",
             subtitle: "Kombination aus Kreativität in Animation und Kompetenz in Softwareentwicklung.",
@@ -21,12 +23,8 @@ const translations = {
                 github: "GitHub Profil"
             }
         },
-        about: {
-            title: "Über mich",
-            subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `Ich bin <strong>Samira Mashti Zadeh</strong>, eine leidenschaftliche Entwicklerin mit Fokus auf <span class="highlight">Full-Stack Entwicklung</span> und <span class="highlight">immersive 3D-Erlebnisse</span>. Mit einem soliden Hintergrund in Softwareentwicklung und einem kreativen Auge für Animation verbinde ich Technologie und Kunst, um innovative Lösungen zu schaffen.`,
-            secondary_text: `Meine Reise begann mit der Automatisierung komplexer Prozesse und führte zur Entwicklung von <strong>Scalable Web Applications</strong> und interaktiven 3D-Erfahrungen, die Grenzen verschieben.`
-        },
+
+        // Animations Section
         animations: {
             title: "Animationen",
             subtitle: "Motion Graphics, Webanimationen und leichte Interaktionen.",
@@ -50,6 +48,8 @@ const translations = {
             },
             more: "Mehr anzeigen"
         },
+
+        // Projects Section
         projects: {
             title: "Programmierungsprojekte",
             subtitle: "Praktische Beispiele mit Demo-Links und Code.",
@@ -80,6 +80,44 @@ const translations = {
             view: "Projekt anzeigen",
             more: "Weitere Projekte"
         },
+
+        // About Section
+        about: {
+            title: "Über mich",
+            subtitle: "Full-Stack Developer · 3D Animator",
+            main_text: `Ich bin <strong>Samira Mashti Zadeh</strong>, eine leidenschaftliche Entwicklerin mit Fokus auf <span class="highlight">Full-Stack Entwicklung</span> und <span class="highlight">immersive 3D-Erlebnisse</span>.`,
+            secondary_text: `Meine Reise begann mit der Automatisierung komplexer Prozesse und führte zur Entwicklung von <strong>Scalable Web Applications</strong> und interaktiven 3D-Erfahrungen.`,
+            education_title: "Universitäre Ausbildung",
+            education: {
+                high_school: {
+                    degree: "High School Diploma (Science)",
+                    institution: "Rezvan High School",
+                    status: "Abgeschlossen",
+                    date: "2014"
+                },
+                pre_university: {
+                    degree: "Pre-University Program",
+                    institution: "Shahid Torki School",
+                    status: "Abgeschlossen",
+                    date: "2015"
+                },
+                bachelor: {
+                    degree: "B.A. in Translation Studies",
+                    institution: "Jihad University",
+                    status: "Abgeschlossen",
+                    date: "2020"
+                },
+                master: {
+                    degree: "M.A. in North American Studies",
+                    institution: "University of Marburg",
+                    status: "In Bearbeitung",
+                    date: "2025 - Heute"
+                }
+            },
+            skills_title: "Schlüsselkompetenzen"
+        },
+
+        // Certificates Section
         certs: {
             title: "Zertifikate & Nachweise",
             subtitle: "Offizielle Zertifikate, Kurse und Erfolge aus verschiedenen Plattformen.",
@@ -92,79 +130,90 @@ const translations = {
                 urbino: "Urbino",
                 irandigital: "Iran Digital"
             },
-            view: "ansehen",
             controls: {
                 play: "Play",
-                slow: "Slow Down",
-                fast: "Speed Up",
+                slow: "Langsamer",
+                fast: "Schneller",
                 view_all: "Alle Zertifikate auf GitHub →"
-            }
+            },
+            loading: "Zertifikate werden geladen..."
         },
+
+        // Contact Section
         contact: {
             title: "Kontakt",
             subtitle: "Schreib mir für Zusammenarbeit oder Austausch.",
             github: "GitHub",
             linkedin: "LinkedIn",
-            email: "Email",
-            phone: "Mobile",
+            email: "E-Mail",
+            phone: "Mobil",
             whatsapp: "WhatsApp",
             telegram: "Telegram"
         },
+
+        // Footer
         footer: {
             text: "© Samira Mashti Zadeh — Portfolio. Mit Liebe zum Detail erstellt."
+        },
+
+        // Meta
+        meta: {
+            description: "Animationen, Programmierprojekte und professionelle Zertifikate von Samira Mashti Zadeh."
         }
     },
+
     en: {
+        // Navigation
         nav: {
             home: "Home",
-            about: "About",
             animations: "Animations",
             projects: "Projects",
+            about: "About",
             certs: "Certificates",
             contact: "Contact",
             lang: "🌐 DE"
         },
+
+        // Hero Section
         hero: {
             title: "Visual Experiences & Clean Coding",
-            subtitle: "Combining creativity in animation with competence in software development.",
+            subtitle: "Combining creativity in animation with excellence in software development.",
             cta: {
                 projects: "View Projects",
                 animations: "View Animations",
                 github: "GitHub Profile"
             }
         },
-        about: {
-            title: "About Me",
-            subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `I am <strong>Samira Mashti Zadeh</strong>, a passionate developer focusing on <span class="highlight">Full-Stack Development</span> and <span class="highlight">immersive 3D experiences</span>. With a solid background in software development and a creative eye for animation, I bridge technology and art to create innovative solutions.`,
-            secondary_text: `My journey began with automating complex processes and led to the development of <strong>Scalable Web Applications</strong> and interactive 3D experiences that push boundaries.`
-        },
+
+        // Animations Section
         animations: {
             title: "Animations",
-            subtitle: "Motion graphics, web animations and light interactions.",
+            subtitle: "Motion graphics, web animations and interactive experiences.",
             card1: {
                 title: "MotorGirl Animation",
-                description: "I created this animation with the BlenderApp.",
+                description: "I created this animation using BlenderApp.",
                 tag1: "Design",
                 tag2: "Animation"
             },
             card2: {
                 title: "Abstract Art",
-                description: "In this video, I created this animated girl for testing.",
+                description: "In this video, I created this animated character for testing purposes.",
                 tag1: "Motion",
                 tag2: "Art"
             },
             card3: {
                 title: "Interactive Design",
-                description: "In this video, this animated girl is running.",
+                description: "In this video, the animated character is running.",
                 tag1: "BlenderApp",
                 tag2: "Interaction"
             },
             more: "Show More"
         },
+
+        // Projects Section
         projects: {
             title: "Programming Projects",
-            subtitle: "Hands-on examples with demo links and code.",
+            subtitle: "Hands-on examples with demo links and source code.",
             card1: {
                 title: "TB Chest X-Ray Classifier",
                 description: "Deep learning model for detecting Tuberculosis with 99.51% accuracy."
@@ -192,6 +241,44 @@ const translations = {
             view: "View Project",
             more: "More Projects"
         },
+
+        // About Section
+        about: {
+            title: "About Me",
+            subtitle: "Full-Stack Developer · 3D Animator",
+            main_text: `I am <strong>Samira Mashti Zadeh</strong>, a passionate developer focusing on <span class="highlight">Full-Stack Development</span> and <span class="highlight">immersive 3D experiences</span>.`,
+            secondary_text: `My journey began with automating complex processes and led to developing <strong>Scalable Web Applications</strong> and interactive 3D experiences.`,
+            education_title: "University Education",
+            education: {
+                high_school: {
+                    degree: "High School Diploma (Science)",
+                    institution: "Rezvan High School",
+                    status: "Completed",
+                    date: "2014"
+                },
+                pre_university: {
+                    degree: "Pre-University Program",
+                    institution: "Shahid Torki School",
+                    status: "Completed",
+                    date: "2015"
+                },
+                bachelor: {
+                    degree: "B.A. in Translation Studies",
+                    institution: "Jihad University",
+                    status: "Completed",
+                    date: "2020"
+                },
+                master: {
+                    degree: "M.A. in North American Studies",
+                    institution: "University of Marburg",
+                    status: "In Progress",
+                    date: "2025 - Present"
+                }
+            },
+            skills_title: "Key Skills"
+        },
+
+        // Certificates Section
         certs: {
             title: "Certificates & Credentials",
             subtitle: "Official certificates, courses and achievements from various platforms.",
@@ -204,17 +291,19 @@ const translations = {
                 urbino: "Urbino",
                 irandigital: "Iran Digital"
             },
-            view: "View",
             controls: {
                 play: "Play",
                 slow: "Slow Down",
                 fast: "Speed Up",
                 view_all: "All Certificates on GitHub →"
-            }
+            },
+            loading: "Loading certificates..."
         },
+
+        // Contact Section
         contact: {
             title: "Contact",
-            subtitle: "Write to me for collaboration or exchange.",
+            subtitle: "Reach out for collaboration or just to say hello.",
             github: "GitHub",
             linkedin: "LinkedIn",
             email: "Email",
@@ -222,17 +311,25 @@ const translations = {
             whatsapp: "WhatsApp",
             telegram: "Telegram"
         },
+
+        // Footer
         footer: {
             text: "© Samira Mashti Zadeh — Portfolio. Created with love for detail."
+        },
+
+        // Meta
+        meta: {
+            description: "Animations, programming projects and professional certificates by Samira Mashti Zadeh."
         }
     }
 };
 
-// Language management
+// Enhanced I18n Manager with dynamic content support
 class I18nManager {
     constructor() {
         this.currentLang = this.getInitialLanguage();
-        console.log('Initializing with language:', this.currentLang);
+        this.observers = [];
+        console.log('[i18n] Initializing with language:', this.currentLang);
         this.init();
     }
 
@@ -240,26 +337,24 @@ class I18nManager {
         // Check saved preference
         const savedLang = localStorage.getItem('portfolio-language');
         if (savedLang && translations[savedLang]) {
-            console.log('Found saved language:', savedLang);
             return savedLang;
         }
 
         // Check browser language
         const browserLang = navigator.language?.split('-')[0];
         if (browserLang === 'de' || browserLang === 'en') {
-            console.log('Using browser language:', browserLang);
             return browserLang;
         }
 
         // Default to German
-        console.log('Defaulting to German');
         return 'de';
     }
 
     init() {
         this.applyLanguage();
         this.setupEventListeners();
-        console.log('I18nManager initialized');
+        this.setupDynamicContentObserver();
+        console.log('[i18n] Manager initialized successfully');
     }
 
     setupEventListeners() {
@@ -267,39 +362,67 @@ class I18nManager {
         if (langBtn) {
             langBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('Language button clicked, current:', this.currentLang);
                 this.toggleLanguage();
             });
-            console.log('Language button event listener attached');
-        } else {
-            console.error('Language button not found!');
+        }
+
+        // Handle nav links that might need language-specific routing
+        document.querySelectorAll('nav a[href=""]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.querySelector('#langBtn')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    }
+
+    setupDynamicContentObserver() {
+        // Watch for dynamically added content (certificates, etc.)
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    this.translateDynamicElements(mutation.addedNodes);
+                }
+            });
+        });
+
+        const certContainer = document.getElementById('certContainer');
+        if (certContainer) {
+            observer.observe(certContainer, { childList: true, subtree: true });
         }
     }
 
     toggleLanguage() {
         const newLang = this.currentLang === 'de' ? 'en' : 'de';
-        console.log('Toggling from', this.currentLang, 'to', newLang);
+        console.log(`[i18n] Switching from ${this.currentLang} to ${newLang}`);
+
         this.currentLang = newLang;
         this.applyLanguage();
         this.savePreference();
+
+        // Dispatch custom event for other scripts
+        window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: newLang }
+        }));
     }
 
     savePreference() {
         localStorage.setItem('portfolio-language', this.currentLang);
-        console.log('Language preference saved:', this.currentLang);
+        document.documentElement.setAttribute('data-lang', this.currentLang);
     }
 
     applyLanguage() {
-        // Update HTML lang attribute
+        // Update HTML attributes
         document.documentElement.lang = this.currentLang;
+        document.documentElement.setAttribute('data-lang', this.currentLang);
 
         // Update language button
         this.updateLangButton();
 
-        // Apply translations
-        this.translateElements();
-
-        console.log('Language applied:', this.currentLang);
+        // Apply all translations
+        this.translateStaticElements();
+        this.translateEducationSection();
+        this.translateMetaTags();
     }
 
     updateLangButton() {
@@ -307,32 +430,103 @@ class I18nManager {
         if (langBtn) {
             const btnText = this.currentLang === 'de' ? '🌐 EN' : '🌐 DE';
             langBtn.textContent = btnText;
-            console.log('Button updated to:', btnText);
+            langBtn.setAttribute('data-lang', this.currentLang === 'de' ? 'en' : 'de');
         }
     }
 
-    translateElements() {
-        // Get all elements with data-i18n attribute
+    translateStaticElements() {
         const elements = document.querySelectorAll('[data-i18n]');
-        console.log('Translating', elements.length, 'elements');
 
-        elements.forEach((element, index) => {
+        elements.forEach((element) => {
             const key = element.getAttribute('data-i18n');
             const translation = this.getNestedTranslation(key);
 
             if (translation !== undefined) {
-                // Handle different element types
-                if (element.tagName === 'INPUT' && element.type !== 'submit' && element.type !== 'button') {
-                    element.placeholder = translation;
-                } else if (element.tagName === 'IMG') {
-                    element.alt = translation;
-                } else {
-                    element.innerHTML = translation;
-                }
-            } else {
-                console.warn('Translation not found for key:', key);
+                this.applyTranslationToElement(element, translation);
             }
         });
+    }
+
+    translateDynamicElements(nodes) {
+        nodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                const elements = node.querySelectorAll ?
+                    node.querySelectorAll('[data-i18n]') : [];
+
+                elements.forEach((element) => {
+                    const key = element.getAttribute('data-i18n');
+                    const translation = this.getNestedTranslation(key);
+                    if (translation !== undefined) {
+                        this.applyTranslationToElement(element, translation);
+                    }
+                });
+            }
+        });
+    }
+
+    translateEducationSection() {
+        const t = translations[this.currentLang].about.education;
+
+        // Update education cards if they exist
+        const educationCards = document.querySelectorAll('.education-card');
+        if (educationCards.length >= 4) {
+            const keys = ['high_school', 'pre_university', 'bachelor', 'master'];
+
+            educationCards.forEach((card, index) => {
+                if (keys[index] && t[keys[index]]) {
+                    const data = t[keys[index]];
+                    const degreeEl = card.querySelector('.education-degree');
+                    const statusEl = card.querySelector('.education-status');
+
+                    if (degreeEl) degreeEl.textContent = data.degree;
+                    if (statusEl) statusEl.textContent = data.status;
+                }
+            });
+        }
+
+        // Update section titles
+        const eduTitle = document.querySelector('.education-title');
+        if (eduTitle) {
+            eduTitle.textContent = translations[this.currentLang].about.education_title;
+        }
+
+        const skillsTitle = document.querySelector('.skills-title');
+        if (skillsTitle) {
+            skillsTitle.textContent = translations[this.currentLang].about.skills_title;
+        }
+    }
+
+    translateMetaTags() {
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.content = translations[this.currentLang].meta.description;
+        }
+
+        // Update title if needed
+        const titleMap = {
+            de: 'Samira Mashti Zadeh',
+            en: 'Samira Mashti Zadeh'
+        };
+        document.title = titleMap[this.currentLang];
+    }
+
+    applyTranslationToElement(element, translation) {
+        // Handle different element types
+        if (element.tagName === 'INPUT') {
+            if (element.type === 'submit' || element.type === 'button') {
+                element.value = translation;
+            } else {
+                element.placeholder = translation;
+            }
+        } else if (element.tagName === 'IMG') {
+            element.alt = translation;
+        } else if (element.tagName === 'META') {
+            element.content = translation;
+        } else {
+            // Support HTML content in translations
+            element.innerHTML = translation;
+        }
     }
 
     getNestedTranslation(key) {
@@ -343,22 +537,41 @@ class I18nManager {
             if (current && typeof current === 'object' && k in current) {
                 current = current[k];
             } else {
-                console.error('Translation key not found:', key, 'at part:', k);
+                console.warn(`[i18n] Translation key not found: ${key}`);
                 return undefined;
             }
         }
 
         return current;
     }
+
+    // Public API for other scripts
+    getCurrentLanguage() {
+        return this.currentLang;
+    }
+
+    translateKey(key) {
+        return this.getNestedTranslation(key);
+    }
+
+    formatDate(dateStr) {
+        // Format dates according to locale
+        if (this.currentLang === 'de') {
+            return dateStr.replace('Present', 'Heute').replace('present', 'heute');
+        }
+        return dateStr;
+    }
 }
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing I18nManager...');
     const i18n = new I18nManager();
-
-    // Store globally for debugging
     window.i18nManager = i18n;
 
-    console.log(`✅ Portfolio initialized in ${i18n.currentLang.toUpperCase()} language`);
+    console.log(`[i18n] ✅ Portfolio ready in ${i18n.currentLang.toUpperCase()}`);
 });
+
+// Export for module systems (if needed)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { translations, I18nManager };
+}
