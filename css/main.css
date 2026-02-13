@@ -3236,3 +3236,181 @@ a {
     height: 64px;
     object-fit: contain;
         }
+
+
+
+
+/* ==================== Compact IELTS Section ==================== */
+#ielts.section {
+  padding: 60px 20px;
+  background: var(--bg);
+}
+
+.ielts-compact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.ielts-cert-card {
+  background: linear-gradient(145deg, #1a1d24 0%, #2d1f3d 100%);
+  border: 1px solid rgba(169, 51, 255, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 500px;
+  width: 100%;
+}
+
+.ielts-cert-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(169, 51, 255, 0.3);
+  border-color: a933ff;
+}
+
+/* Certificate Image */
+.cert-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 140px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cert-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ielts-cert-card:hover .cert-image {
+  transform: scale(1.05);
+}
+
+.cert-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(169, 51, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ielts-cert-card:hover .cert-glow {
+  opacity: 1;
+}
+
+/* Certificate Info */
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.ielts-mini-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ielts-logo-small {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #a933ff;
+  letter-spacing: 2px;
+}
+
+.band-badge {
+  background: linear-gradient(135deg, #a933ff, #a933ff);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(169, 51, 255, 0.3);
+}
+
+/* Mini Score Grid */
+.score-mini {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.mini-item {
+  background: rgba(169, 51, 255, 0.2);
+  border: 1px solid rgba(169, 51, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mini-item:hover {
+  background: rgba(169, 51, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.mini-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+}
+
+.mini-item strong {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* View Button */
+.view-btn {
+  background: transparent !important;
+  border: 1px solid #a933ff !important;
+  color: #a933ff !important;
+  padding: 8px 16px !important;
+  font-size: 0.85rem !important;
+  margin-top: auto;
+  transition: all 0.3s ease !important;
+}
+
+.view-btn:hover {
+  background: #a933ff !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(169, 51, 255, 0.3) !important;
+}
+
+/* ==================== Compact IELTS Responsive ==================== */
+@media (max-width: 576px) {
+  .ielts-cert-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cert-image-wrapper {
+    width: 120px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .score-mini {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .ielts-mini-badge {
+    justify-content: center;
+  }
+}
