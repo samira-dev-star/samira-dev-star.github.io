@@ -1,0 +1,476 @@
+/* ==================== ناوبری ==================== */
+.nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(16px) saturate(180%);
+    background: linear-gradient(135deg, rgba(14, 15, 19, 0.85), rgba(20, 22, 28, 0.92));
+    border-bottom: 1px solid rgba(169, 51, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* افکت اسکرول - تاریک‌تر شدن هنگام اسکرول */
+.nav.scrolled {
+    background: linear-gradient(135deg, rgba(14, 15, 19, 0.95), rgba(20, 22, 28, 0.98));
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(169, 51, 255, 0.3);
+}
+
+/* افکت نورپردازی بالای نوار */
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ring), var(--primary), var(--ring));
+    
+    background-size: 200% 200%;
+    animation: gradientFlow 4s ease infinite reverse;
+    opacity: 0.7;
+}
+
+/* نوار پایینی */
+.nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--ring), var(--primary));
+    background-size: 200% 200%;
+    animation: gradientFlow 3s ease infinite;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* لوگو با افکت پالس */
+.logo {
+    width: 50px;
+    height: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 2px 8px rgba(169, 51, 255, 0.3));
+    animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 2px 8px rgba(169, 51, 255, 0.3));
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 4px 15px rgba(169, 51, 255, 0.6));
+    }
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 6px 20px rgba(169, 51, 255, 0.8));
+}
+
+/* منوی اصلی - حذف دکمه زبان از این بخش */
+.nav nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* لینک‌های ناوبری با افکت‌های زیبا - بدون تأثیر روی دکمه زبان */
+.nav nav a:not(#langBtn) {
+    position: relative;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav nav a:not(#langBtn)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(169, 51, 255, 0.15), rgba(0, 188, 212, 0.1));
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.nav nav a:not(#langBtn):hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    background: rgba(169, 51, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(169, 51, 255, 0.2);
+}
+
+.nav nav a:not(#langBtn):hover::before {
+    opacity: 1;
+}
+
+/* افکت ایندیکیتور پایین لینک‌ها */
+.nav nav a:not(#langBtn)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--ring));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav nav a:not(#langBtn):hover::after {
+    width: 80%;
+}
+
+/* افکت اکتیو برای لینک فعلی */
+.nav nav a:not(#langBtn).active {
+    opacity: 1;
+    color: var(--primary);
+    background: rgba(169, 51, 255, 0.15);
+}
+
+.nav nav a:not(#langBtn).active::after {
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--ring));
+}
+
+/* ==================== دکمه زبان - استایل اصلی و محافظت شده ==================== */
+/* حذف لینک اضافی دور دکمه */
+.nav nav a[href=""] {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+/* استایل اصلی دکمه زبان - با اولویت بالا */
+#langBtn {
+    background: transparent !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--text) !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 4px 15px rgba(169, 51, 255, 0.1) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    min-width: 80px !important;
+}
+
+/* حالت هاور - بوردر به رنگ آبی تغییر می‌کنه */
+#langBtn:hover {
+    border-color: var(--ring) !important;
+    background: rgba(169, 51, 255, 0.08) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 8px 25px rgba(169, 51, 255, 0.3) !important;
+    color: var(--text) !important;
+}
+
+/* افکت شیمر برای بوردر در هاور */
+#langBtn::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            var(--primary) 50%,
+            var(--ring) 70%,
+            transparent 100%);
+    background-size: 200% 200%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    animation: borderShimmer 2s linear infinite;
+}
+
+#langBtn:hover::before {
+    opacity: 1;
+}
+
+@keyframes borderShimmer {
+    0% {
+        background-position: -200% -200%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* ==================== دکمه همبرگر منو مدرن ==================== */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 200;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--primary), var(--ring));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    border-radius: 2px;
+}
+
+/* حالت فعال (X) */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+    background: linear-gradient(90deg, var(--ring), var(--primary));
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    background: linear-gradient(90deg, var(--ring), var(--primary));
+}
+
+/* افکت موج برای دکمه همبرگر */
+.mobile-menu-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(169, 51, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.mobile-menu-toggle:active::before {
+    width: 100px;
+    height: 100px;
+}
+
+/* ==================== منوی موبایل مدرن ==================== */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+
+    /* منوی اصلی - حالت بسته */
+    .nav nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(14, 15, 19, 0.98), rgba(20, 22, 28, 0.95));
+        backdrop-filter: blur(20px) saturate(180%);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 100px 24px 40px;
+        transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-left: 1px solid rgba(169, 51, 255, 0.3);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+        z-index: 150;
+        gap: 12px;
+    }
+
+    /* منوی باز */
+    .nav nav.active {
+        right: 0 !important;
+    }
+
+    /* استایل لینک‌های منوی موبایل - بدون تأثیر روی دکمه زبان */
+    .nav nav a:not(#langBtn) {
+        padding: 16px 20px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        opacity: 0.9;
+        transform: translateX(30px);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav nav a:not(#langBtn)::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, var(--primary), var(--ring));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav nav a:not(#langBtn):hover {
+        background: rgba(169, 51, 255, 0.15);
+        border-color: rgba(169, 51, 255, 0.4);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav nav a:not(#langBtn):hover::before {
+        opacity: 1;
+    }
+
+    /* انیمیشن slide-in برای لینک‌ها */
+    .nav nav.active a:not(#langBtn):nth-child(1) {
+        transition-delay: 0.1s;
+        transform: translateX(0);
+    }
+
+    .nav nav.active a:not(#langBtn):nth-child(2) {
+        transition-delay: 0.15s;
+        transform: translateX(0);
+    }
+
+    .nav nav.active a:not(#langBtn):nth-child(3) {
+        transition-delay: 0.2s;
+        transform: translateX(0);
+    }
+
+    .nav nav.active a:not(#langBtn):nth-child(4) {
+        transition-delay: 0.25s;
+        transform: translateX(0);
+    }
+
+    .nav nav.active a:not(#langBtn):nth-child(5) {
+        transition-delay: 0.3s;
+        transform: translateX(0);
+    }
+
+    .nav nav.active a:not(#langBtn):nth-child(6) {
+        transition-delay: 0.35s;
+        transform: translateX(0);
+    }
+
+    /* دکمه زبان در منوی موبایل - استایل محافظت شده */
+    #langBtn {
+        margin: 24px 20px 0 !important;
+        background: rgba(169, 51, 255, 0.15) !important;
+        border: 1px solid var(--primary) !important;
+        border-radius: 10px !important;
+        align-self: center !important;
+        width: calc(100% - 40px) !important;
+        max-width: none !important;
+        text-align: center !important;
+        padding: 14px !important;
+        font-size: 1rem !important;
+    }
+
+    #langBtn:hover {
+        background: rgba(169, 51, 255, 0.25) !important;
+        border-color: var(--ring) !important;
+        transform: translateY(-3px) !important;
+    }
+}
+
+/* ریسپانسیو برای تبلت */
+@media (min-width: 769px) and (max-width: 992px) {
+    .nav nav {
+        gap: 6px;
+    }
+
+    .nav nav a:not(#langBtn) {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    #langBtn {
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
+        margin-left: 8px !important;
+    }
+}
+
+/* موبایل کوچک */
+@media (max-width: 480px) {
+    .nav {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        width: 44px;
+    }
+
+    .mobile-menu-toggle {
+        width: 24px;
+        height: 18px;
+    }
+
+    .nav nav {
+        width: 85%;
+        padding: 90px 20px 30px;
+    }
+
+    .nav nav a:not(#langBtn) {
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+
+    #langBtn {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+}

@@ -9,7 +9,9 @@
     content="Animationen, Programmierprojekte und professionelle Zertifikate von Samira Mashti Zadeh." />
   <link rel="preconnect" href="https://fonts.googleapis.com ">
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400 ;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/work-history.css" />
   <link rel="icon" href="./images/main/favicon.png" type="image/png">
 </head>
 
@@ -29,11 +31,11 @@
 
     <!-- ID اضافه شد -->
     <nav id="mainNav">
-      <a href="#hero" data-i18n="nav.home">Heim</a>
-
+      <a href="#hero" data-i18n="nav.home">Start</a>
       <a href="#animations" data-i18n="nav.animations">Animationen</a>
       <a href="#projects" data-i18n="nav.projects">Projekte</a>
       <a href="#about" data-i18n="nav.about">Über mich</a>
+      <a href="#work" data-i18n="nav.work">Berufserfahrung</a>
       <a href="#certs" data-i18n="nav.certs">Zertifikate</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
       <a href="">
@@ -44,13 +46,13 @@
 
   <section id="hero" class="hero">
     <div class="hero__content">
-      <h2 class="hero__name">Samira Mashti Zadeh</h2>
-      <h1 data-i18n="hero.title">Visuelle Erlebnisse & sauberes Coding</h1>
+      <h1 class="hero.name">Samira Mashti Zadeh</h1>
+      <h2 data-i18n="hero.title" style="color: #00bcd4;">Visuelle Erlebnisse & sauberes Coding</h2>
       <p data-i18n="hero.subtitle">Kombination aus Kreativität in Animation und Kompetenz in Softwareentwicklung.</p>
       <div class="hero__cta">
         <a class="btn primary" href="#projects" data-i18n="hero.cta.projects">Projekte ansehen</a>
         <a class="btn ghost" href="#animations" data-i18n="hero.cta.animations">Animationen ansehen</a>
-        <a class="btn ghost" href="https://github.com/samira-dev-star " target="_blank" rel="noopener"
+        <a class="btn ghost" href="https://github.com/samira-dev-star" target="_blank" rel="noopener"
           data-i18n="hero.cta.github">GitHub Profil</a>
       </div>
     </div>
@@ -59,7 +61,6 @@
         <circle cx="100" cy="100" r="100" class="ring"></circle>
         <circle cx="100" cy="100" r="120" class="ring ring--2"></circle>
       </svg>
-
     </div>
   </section>
 
@@ -84,7 +85,7 @@
       </article>
       <article class="card">
         <div class="card__media">
-          <video src="videos/video0000-0250.mkv" controls preload="metadata"></video>
+          <video src="videos/0001-0241.mkv" controls preload="metadata"></video>
         </div>
         <div class="card__body">
           <h3 data-i18n="animations.card2.title">Abstract Art</h3>
@@ -96,7 +97,7 @@
       </article>
       <article class="card">
         <div class="card__media">
-          <video src="videos/video-check0001-0078.mkv" controls preload="metadata"></video>
+          <video src="videos/samvid0001-1120.mkv" controls preload="metadata"></video>
         </div>
         <div class="card__body">
           <h3 data-i18n="animations.card3.title">Interaktives Design</h3>
@@ -226,8 +227,9 @@
         <img src="images/main/personal-photo.png" alt="Samira Mashti Zadeh" class="personal-photo">
       </div>
     </div>
-    <div class="education-section">
-      <h3 class="education-title" style="text-align: center;">University Education</h3>
+    </section>
+    <section class="section alt">
+      <h2 class="education-title" style="text-align: center;">Universitäre Ausbildung</h2>
       <div class="education-item">
         <div class="education-card">
           <h4 class="education-degree">High School Diploma (Science)</h4>
@@ -254,11 +256,46 @@
           <p class="education-date">2025 - Present</p>
         </div>
       </div>
+    </section>
+    
+  <!-- Work History - Dark Section (alternating pattern) -->
+  <section id="work" class="section alt">
+    <div class="section__head">
+      <h2 data-i18n="work.title">Berufserfahrung</h2>
+      <p data-i18n="work.subtitle">Sprachlehre & Ausbildung</p>
     </div>
 
+    <div class="work-gallery">
+      <a href="https://raw.githubusercontent.com/samira-dev-star/samira-dev-star/main/Work-history/Language-training-at-the-Jihad-Daneshghee-Institute.png"
+        class="work-card" target="_blank">
+        <div class="work-image-wrap">
+          <img
+            src="https://raw.githubusercontent.com/samira-dev-star/samira-dev-star/main/Work-history/Language-training-at-the-Jihad-Daneshghee-Institute.png"
+            alt="Jihad Daneshghee Institute" loading="lazy">
+        </div>
+        <div class="work-caption">
+          <h3 data-i18n="work.job1.title">Sprachausbildung</h3>
+          <p data-i18n="work.job1.company">Jihad Daneshghee Institut</p>
+        </div>
+      </a>
+
+      <a href="https://raw.githubusercontent.com/samira-dev-star/samira-dev-star/main/Work-history/Teaching-at-Faraz-Language-School.png"
+        class="work-card" target="_blank">
+        <div class="work-image-wrap">
+          <img
+            src="https://raw.githubusercontent.com/samira-dev-star/samira-dev-star/main/Work-history/Teaching-at-Faraz-Language-School.png"
+            alt="Faraz Language School" loading="lazy">
+        </div>
+        <div class="work-caption">
+          <h3 data-i18n="work.job2.title">Englischunterricht</h3>
+          <p data-i18n="work.job2.company">Faraz Sprachschule</p>
+        </div>
+      </a>
+    </div>
+  </section>
     <!-- Key Skills -->
-    <div class="key-skills-section">
-      <h3 class="skills-title" style="text-align: center;">Key Skills</h3>
+  <section class="section alt">
+      <h2 class="skills-title" style="text-align: center;">Schlüsselkompetenzen</h2>
       <div>
         <div class="skills-list">
           <span class="skill-item">Python</span>
@@ -277,8 +314,8 @@
           <span class="skill-item">Microsoft-office</span>
         </div>
       </div>
-    </div>
   </section>
+
 
   <!-- بخش گواهینامه‌ها با بارگذاری داینامیک -->
   <section id="certs" class="section">
@@ -305,6 +342,42 @@
       <button class="btn fast" data-i18n="certs.controls.fast">Speed Up</button>
       <a href="https://github.com/samira-dev-star/samira-dev-star/tree/main/Certificate" class="btn view-all"
         target="_blank" data-i18n="certs.controls.view_all">Alle Zertifikate auf GitHub →</a>
+    </div>
+  </section>
+  <!-- Compact IELTS Certificate Section -->
+  <section id="ielts" class="section">
+    <div class="section__head">
+      <h2 data-i18n="ielts.title">IELTS Academic</h2>
+      <p data-i18n="ielts.subtitle">Band 7.0 Overall Score</p>
+    </div>
+  
+    <div class="ielts-compact-container">
+      <!-- Certificate Card with Image -->
+      <div class="ielts-cert-card">
+        <div class="cert-image-wrapper">
+          <img src="./images/IELTS.png" alt="IELTS Certificate" class="cert-image">
+          <div class="cert-glow"></div>
+        </div>
+  
+        <div class="cert-info">
+          <div class="ielts-mini-badge">
+            <span class="ielts-logo-small">IELTS</span>
+            <span class="band-badge">7.0</span>
+          </div>
+  
+          <div class="score-mini">
+            <div class="mini-item"><span>L</span><strong>7.5</strong></div>
+            <div class="mini-item"><span>R</span><strong>6.5</strong></div>
+            <div class="mini-item"><span>W</span><strong>6.5</strong></div>
+            <div class="mini-item"><span>S</span><strong>7.5</strong></div>
+          </div>
+  
+          <a href="./IELTS.png" target="_blank"
+            class="btn small view-btn">
+            <span data-i18n="ielts.view">View Certificate</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
