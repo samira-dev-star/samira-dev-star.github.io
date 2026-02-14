@@ -29,10 +29,11 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--ring), var(--primary));
+    height: 1px;
+    background: linear-gradient(90deg, var(--ring), var(--primary), var(--ring));
+    
     background-size: 200% 200%;
-    animation: gradientFlow 3s ease infinite;
+    animation: gradientFlow 4s ease infinite reverse;
     opacity: 0.7;
 }
 
@@ -43,10 +44,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--ring), var(--primary), var(--ring));
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--ring), var(--primary));
     background-size: 200% 200%;
-    animation: gradientFlow 4s ease infinite reverse;
+    animation: gradientFlow 3s ease infinite;
     opacity: 0.5;
     z-index: 10;
 }
