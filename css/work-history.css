@@ -1,0 +1,75 @@
+/* Work History Layout - inherits .section styles */
+.work-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.work-card {
+    flex: 1;
+    max-width: 400px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(169, 51, 255, 0.2);
+    border-color: rgba(169, 51, 255, 0.4);
+}
+
+.work-image-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: var(--bg-alt);
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.05);
+}
+
+.work-caption {
+    padding: 20px;
+    text-align: center;
+}
+
+.work-caption h3 {
+    color: var(--text);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.work-caption p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .work-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-card {
+        max-width: 100%;
+        width: 100%;
+    }
+}
