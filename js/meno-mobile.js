@@ -40,4 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 100);
         };
     }
+    document.body.classList.toggle('no-scroll', mainNav.classList.contains('active'));
 });
