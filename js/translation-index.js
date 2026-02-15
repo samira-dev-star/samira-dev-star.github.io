@@ -8,7 +8,9 @@ const translations = {
             animations: "Animationen",
             projects: "Projekte",
             about: "Über mich",
+            work: "Berufserfahrung",
             certs: "Zertifikate",
+            ielts: "IELTS",
             contact: "Kontakt",
             lang: "🌐 EN"
         },
@@ -117,6 +119,21 @@ const translations = {
             skills_title: "Schlüsselkompetenzen"
         },
 
+        // IELTS Section - NEW
+        ielts: {
+            title: "IELTS Akademisch",
+            subtitle: "Gesamtergebnis Band 7.0",
+            view: "Zertifikat anzeigen",
+            listening: "Hören",
+            reading: "Lesen",
+            writing: "Schreiben",
+            speaking: "Sprechen",
+            test_date: "Testdatum:",
+            test_center: "Testzentrum:",
+            candidate_id: "Kandidaten-ID:",
+            verify_note: "Verifiziert vom British Council • Gültig für 2 Jahre"
+        },
+
         // Certificates Section
         certs: {
             title: "Zertifikate & Nachweise",
@@ -169,7 +186,9 @@ const translations = {
             animations: "Animations",
             projects: "Projects",
             about: "About",
+            work: "Work Experience",
             certs: "Certificates",
+            ielts: "IELTS",
             contact: "Contact",
             lang: "🌐 DE"
         },
@@ -285,6 +304,21 @@ const translations = {
                 }
             },
             skills_title: "Key Skills"
+        },
+
+        // IELTS Section - NEW
+        ielts: {
+            title: "IELTS Academic",
+            subtitle: "Overall Band 7.0",
+            view: "View Certificate",
+            listening: "Listening",
+            reading: "Reading",
+            writing: "Writing",
+            speaking: "Speaking",
+            test_date: "Test Date:",
+            test_center: "Test Centre:",
+            candidate_id: "Candidate ID:",
+            verify_note: "Verified by British Council • Valid for 2 years"
         },
 
         // Certificates Section
