@@ -246,8 +246,17 @@ const translations = {
         about: {
             title: "About Me",
             subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `I am <strong>Samira Mashti Zadeh</strong>, a passionate developer focusing on <span class="highlight">Full-Stack Development</span> and <span class="highlight">immersive 3D experiences</span>.`,
-            secondary_text: `My journey began with automating complex processes and led to developing <strong>Scalable Web Applications</strong> and interactive 3D experiences.`,
+            main_text: `I am <strong>Samira Mashti Zadeh</strong>, an animator, web and software developer, and singer who believes <span class="highlight">Full-Stack Development</span> and <span class="highlight">creativity has no boundaries.</span>.`,
+            secondary_text: `🎨 Animation
+            Animation is where stories come alive for me. By blending traditional and digital techniques, I create characters and worlds that feel truly alive — full of emotion, movement, and personality.
+            💻 Development
+            I see coding as an art form. On GitHub, you'll find projects that reflect my passion for solving complex problems and building practical, creative solutions. From web development to innovative tools, I'm always learning, experimenting, and pushing my technical skills further.
+            🎵 Music
+            Singing is more than a hobby — it's how I connect deeply with emotions and storytelling. I use my voice as an instrument to create feeling and craft memorable moments.
+            🌍 Multilingual
+            Languages are windows to different cultures and perspectives. I'm fluent in English, German, and Arabic — a skill that helps me collaborate on international projects and connect with diverse audiences worldwide.
+
+                "Art and technology are two sides of the same coin — and I live at their intersection."`,
             education_title: "University Education",
             education: {
                 high_school: {
