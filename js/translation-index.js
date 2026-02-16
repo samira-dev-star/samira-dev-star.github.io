@@ -266,8 +266,8 @@ const translations = {
             title: "About Me",
             subtitle: "Full-Stack Developer · 3D Animator",
             main_text: `I am <strong>Samira Mashti Zadeh</strong>, an animator, web and software developer, and singer who believes <span class="highlight">Full-Stack Development</span> and <span class="highlight">creativity has no boundaries.</span>.`,
-            secondary_text: `🎨 Animation
-            Animation is where stories come alive for me. By blending traditional and digital techniques, I create characters and worlds that feel truly alive — full of emotion, movement, and personality.
+            secondary_text: `🎨 Animation <br>
+            Animation is where stories come alive for me. By blending traditional and digital techniques, I create characters and worlds that feel truly alive — full of emotion, movement, and personality.<br>
             💻 Development
             I see coding as an art form. On GitHub, you'll find projects that reflect my passion for solving complex problems and building practical, creative solutions. From web development to innovative tools, I'm always learning, experimenting, and pushing my technical skills further.
             🎵 Music
