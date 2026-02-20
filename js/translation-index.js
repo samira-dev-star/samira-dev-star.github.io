@@ -94,32 +94,39 @@ const translations = {
                 high_school: {
                     degree: "High School Diploma (Science)",
                     institution: "Rezvan High School",
-                    status: "Abgeschlossen",
-                    date: "2014"
+                    year: "2014"
                 },
                 pre_university: {
                     degree: "Pre-University Program",
                     institution: "Shahid Torki School",
-                    status: "Abgeschlossen",
-                    date: "2015"
+                    year: "2015"
                 },
                 bachelor: {
                     degree: "B.A. in Translation Studies",
                     institution: "Jihad University",
-                    status: "Abgeschlossen",
-                    date: "2020"
+                    year: "2020"
                 },
                 master: {
                     degree: "M.A. in North American Studies",
                     institution: "University of Marburg",
-                    status: "In Bearbeitung",
-                    date: "2025 - Heute"
+                    year: "2025 - Heute"
                 }
             },
             skills_title: "Schlüsselkompetenzen"
         },
-
-        // IELTS Section - NEW
+        work: {
+            title: "Berufserfahrung",
+            subtitle: "Sprachlehre & Ausbildung",
+            job1: {
+                title: "Sprachausbildung",
+                company: "Jihad Daneshghee Institut"
+            },
+            job2: {
+                title: "Englischunterricht",
+                company: "Faraz Sprachschule"
+            }
+        },
+        // IELTS Section
         ielts: {
             title: "IELTS Akademisch",
             subtitle: "Gesamtergebnis Band 7.0",
@@ -263,7 +270,6 @@ const translations = {
 
         // About Section
         about: {
-            
             title: "About Me",
             subtitle: "Where <strong>Code</strong> Meets <strong>Creativity</strong>",
             main_text: "<strong>Backend developer</strong> with <strong>3 years of experience</strong> in <strong>Python</strong> and <strong>Django</strong>, in <strong>database design</strong> and <strong>API development</strong>. What sets me apart is my <strong>creative background</strong> in <strong>3D animation</strong>, <strong>visual design</strong>, and <strong>music</strong>, allowing me to build systems that are not only <strong>robust</strong> but also <strong>intuitively</strong> and <strong>emotionally resonant</strong>.",
@@ -279,32 +285,39 @@ const translations = {
                 high_school: {
                     degree: "High School Diploma (Science)",
                     institution: "Rezvan High School",
-                    status: "Completed",
-                    date: "2014"
+                    year: "2014"
                 },
                 pre_university: {
                     degree: "Pre-University Program",
                     institution: "Shahid Torki School",
-                    status: "Completed",
-                    date: "2015"
+                    year: "2015"
                 },
                 bachelor: {
                     degree: "B.A. in Translation Studies",
                     institution: "Jihad University",
-                    status: "Completed",
-                    date: "2020"
+                    year: "2020"
                 },
                 master: {
                     degree: "M.A. in North American Studies",
                     institution: "University of Marburg",
-                    status: "In Progress",
-                    date: "2025 - Present"
+                    year: "2025 - Present"
                 }
             },
             skills_title: "Key Skills"
         },
-
-        // IELTS Section - NEW
+        work: {
+            title: "Work Experience",
+            subtitle: "Language Teaching & Training",
+            job1: {
+                title: "Language Training",
+                company: "Jihad Daneshghee Institute"
+            },
+            job2: {
+                title: "English Teaching",
+                company: "Faraz Language School"
+            }
+        },
+        // IELTS Section
         ielts: {
             title: "IELTS Academic",
             subtitle: "Overall Band 7.0",
@@ -369,33 +382,25 @@ const translations = {
 class I18nManager {
     constructor() {
         this.currentLang = this.getInitialLanguage();
-        this.observers = [];
         console.log('[i18n] Initializing with language:', this.currentLang);
         this.init();
     }
 
     getInitialLanguage() {
-        // Check saved preference
         const savedLang = localStorage.getItem('portfolio-language');
         if (savedLang && translations[savedLang]) {
             return savedLang;
         }
-
-        // Check browser language
         const browserLang = navigator.language?.split('-')[0];
         if (browserLang === 'de' || browserLang === 'en') {
             return browserLang;
         }
-
-        // Default to German
         return 'de';
     }
 
     init() {
         this.applyLanguage();
         this.setupEventListeners();
-        this.setupDynamicContentObserver();
-        console.log('[i18n] Manager initialized successfully');
     }
 
     setupEventListeners() {
@@ -406,61 +411,25 @@ class I18nManager {
                 this.toggleLanguage();
             });
         }
-
-        // Handle nav links that might need language-specific routing
-        document.querySelectorAll('nav a[href=""]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.querySelector('#langBtn')) {
-                    e.preventDefault();
-                }
-            });
-        });
-    }
-
-    setupDynamicContentObserver() {
-        // Watch for dynamically added content (certificates, etc.)
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                    this.translateDynamicElements(mutation.addedNodes);
-                }
-            });
-        });
-
-        const certContainer = document.getElementById('certContainer');
-        if (certContainer) {
-            observer.observe(certContainer, { childList: true, subtree: true });
-        }
     }
 
     toggleLanguage() {
         const newLang = this.currentLang === 'de' ? 'en' : 'de';
         console.log(`[i18n] Switching from ${this.currentLang} to ${newLang}`);
-
         this.currentLang = newLang;
         this.applyLanguage();
-        this.savePreference();
+        localStorage.setItem('portfolio-language', this.currentLang);
+        document.documentElement.setAttribute('data-lang', this.currentLang);
 
-        // Dispatch custom event for other scripts
         window.dispatchEvent(new CustomEvent('languageChanged', {
             detail: { language: newLang }
         }));
     }
 
-    savePreference() {
-        localStorage.setItem('portfolio-language', this.currentLang);
-        document.documentElement.setAttribute('data-lang', this.currentLang);
-    }
-
     applyLanguage() {
-        // Update HTML attributes
         document.documentElement.lang = this.currentLang;
         document.documentElement.setAttribute('data-lang', this.currentLang);
-
-        // Update language button
         this.updateLangButton();
-
-        // Apply all translations
         this.translateStaticElements();
         this.translateEducationSection();
         this.translateMetaTags();
@@ -477,96 +446,50 @@ class I18nManager {
 
     translateStaticElements() {
         const elements = document.querySelectorAll('[data-i18n]');
-
         elements.forEach((element) => {
             const key = element.getAttribute('data-i18n');
             const translation = this.getNestedTranslation(key);
-
             if (translation !== undefined) {
-                this.applyTranslationToElement(element, translation);
-            }
-        });
-    }
-
-    translateDynamicElements(nodes) {
-        nodes.forEach(node => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-                const elements = node.querySelectorAll ?
-                    node.querySelectorAll('[data-i18n]') : [];
-
-                elements.forEach((element) => {
-                    const key = element.getAttribute('data-i18n');
-                    const translation = this.getNestedTranslation(key);
-                    if (translation !== undefined) {
-                        this.applyTranslationToElement(element, translation);
-                    }
-                });
+                element.innerHTML = translation;
             }
         });
     }
 
     translateEducationSection() {
         const t = translations[this.currentLang].about.education;
+        if (!t) return;
 
-        // Update education cards if they exist
-        const educationCards = document.querySelectorAll('.education-card');
-        if (educationCards.length >= 4) {
-            const keys = ['high_school', 'pre_university', 'bachelor', 'master'];
+        // Find all education items by data-edu-key
+        const eduItems = document.querySelectorAll('[data-edu-key]');
+        eduItems.forEach((item) => {
+            const key = item.getAttribute('data-edu-key');
+            if (t[key]) {
+                const degreeEl = item.querySelector('.edu-degree, h4');
+                const institutionEl = item.querySelector('.edu-institution, p');
+                const yearEl = item.querySelector('.edu-year, span');
 
-            educationCards.forEach((card, index) => {
-                if (keys[index] && t[keys[index]]) {
-                    const data = t[keys[index]];
-                    const degreeEl = card.querySelector('.education-degree');
-                    const statusEl = card.querySelector('.education-status');
-
-                    if (degreeEl) degreeEl.textContent = data.degree;
-                    if (statusEl) statusEl.textContent = data.status;
-                }
-            });
-        }
+                if (degreeEl) degreeEl.textContent = t[key].degree;
+                if (institutionEl) institutionEl.textContent = t[key].institution;
+                if (yearEl) yearEl.textContent = t[key].year;
+            }
+        });
 
         // Update section titles
-        const eduTitle = document.querySelector('.education-title');
-        if (eduTitle) {
+        const eduTitle = document.querySelector('.education-box-title, .education-inline-title, [data-i18n="about.education_title"]');
+        if (eduTitle && !eduTitle.hasAttribute('data-i18n')) {
             eduTitle.textContent = translations[this.currentLang].about.education_title;
         }
 
-        const skillsTitle = document.querySelector('.skills-title');
-        if (skillsTitle) {
+        const skillsTitle = document.querySelector('.skills-box-title, .skills-inline-title, [data-i18n="about.skills_title"]');
+        if (skillsTitle && !skillsTitle.hasAttribute('data-i18n')) {
             skillsTitle.textContent = translations[this.currentLang].about.skills_title;
         }
     }
 
     translateMetaTags() {
-        // Update meta description
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
             metaDesc.content = translations[this.currentLang].meta.description;
-        }
-
-        // Update title if needed
-        const titleMap = {
-            de: 'Samira Mashti Zadeh',
-            en: 'Samira Mashti Zadeh'
-        };
-        document.title = titleMap[this.currentLang];
-    }
-
-    applyTranslationToElement(element, translation) {
-        // Handle different element types
-        if (element.tagName === 'INPUT') {
-            if (element.type === 'submit' || element.type === 'button') {
-                element.value = translation;
-            } else {
-                element.placeholder = translation;
-            }
-        } else if (element.tagName === 'IMG') {
-            element.alt = translation;
-        } else if (element.tagName === 'META') {
-            element.content = translation;
-        } else {
-            // Support HTML content in translations
-            element.innerHTML = translation;
         }
     }
 
@@ -582,11 +505,9 @@ class I18nManager {
                 return undefined;
             }
         }
-
         return current;
     }
 
-    // Public API for other scripts
     getCurrentLanguage() {
         return this.currentLang;
     }
@@ -594,25 +515,15 @@ class I18nManager {
     translateKey(key) {
         return this.getNestedTranslation(key);
     }
-
-    formatDate(dateStr) {
-        // Format dates according to locale
-        if (this.currentLang === 'de') {
-            return dateStr.replace('Present', 'Heute').replace('present', 'heute');
-        }
-        return dateStr;
-    }
 }
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     const i18n = new I18nManager();
     window.i18nManager = i18n;
-
     console.log(`[i18n] ✅ Portfolio ready in ${i18n.currentLang.toUpperCase()}`);
 });
 
-// Export for module systems (if needed)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { translations, I18nManager };
 }
