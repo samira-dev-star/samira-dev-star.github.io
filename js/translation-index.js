@@ -265,9 +265,18 @@ const translations = {
         about: {
             
             title: "About Me",
-            subtitle: "Where <strong>Code</strong> Meets <strong>Creativity</strong>",
-            main_text: "<strong>Backend developer</strong> with <strong>3 years of experience</strong> in <strong>Python</strong> and <strong>Django</strong>, in <strong>database design</strong> and <strong>API development</strong>. What sets me apart is my <strong>creative background</strong> in <strong>3D animation</strong>, <strong>visual design</strong>, and <strong>music</strong>, allowing me to build systems that are not only <strong>robust</strong> but also <strong>intuitively</strong> and <strong>emotionally resonant</strong>.",
-            secondary_text: "Eager to join <strong>innovative teams</strong> where <strong>technical precision</strong> meets <strong>creative problem-solving</strong>.",
+            subtitle: "Full-Stack Developer · 3D Animator",
+            main_text: `I am <strong>Samira Mashti Zadeh</strong>, an animator, web and software developer, and singer who believes <span class="highlight">Full-Stack Development</span> and <span class="highlight">creativity has no boundaries.</span>.`,
+            secondary_text: `🎨 Animation <br>
+            Animation is where stories come alive for me. By blending traditional and digital techniques, I create characters and worlds that feel truly alive — full of emotion, movement, and personality.<br>
+            💻 Development <br>
+            I see coding as an art form. On GitHub, you'll find projects that reflect my passion for solving complex problems and building practical, creative solutions. From web development to innovative tools, I'm always learning, experimenting, and pushing my technical skills further. <br>
+            🎵 Music <br>
+            Singing is more than a hobby — it's how I connect deeply with emotions and storytelling. I use my voice as an instrument to create feeling and craft memorable moments. <br>
+            🌍 Multilingual <br>
+            Languages are windows to different cultures and perspectives. I'm fluent in English, German, and Arabic — a skill that helps me collaborate on international projects and connect with diverse audiences worldwide. <br>
+
+                "Art and technology are two sides of the same coin — and I live at their intersection."`,
             education_title: "University Education",
             education: {
                 high_school: {
