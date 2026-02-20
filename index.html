@@ -206,57 +206,98 @@
     </div>
   </section>
 
-  <section id="about" class="section alt about-section">
-    <div class="section__head">
-      <h2 data-i18n="about.title">Über mich</h2>
-      <p class="about-subtitle" data-i18n="about.subtitle">Full-Stack Developer · 3D Animator</p>
-    </div>
+<!-- Über mich Section - Three Column Layout -->
+<section id="about" class="section alt about-section">
+  <div class="section__head">
+    <h2 data-i18n="about.title">Über mich</h2>
+    <p class="about-subtitle" data-i18n="about.subtitle">Full-Stack Developer · 3D Animator</p>
+  </div>
 
-    <div class="about-content">
-      <div class="about-text">
+  <div class="about-three-col-wrapper">
+
+    <!-- ستون 1: چپ - متن + مهارت‌ها -->
+    <div class="left-col-text-skills">
+
+      <!-- بخش بالا: متن -->
+      <div class="text-box">
         <p class="about-main-text" data-i18n="about.main_text">
-          Ich bin <strong>Samira Mashti Zadeh</strong>, eine leidenschaftliche Entwicklerin mit Fokus auf <span
-            class="highlight">Full-Stack Entwicklung</span> und <span class="highlight">immersive 3D-Erlebnisse</span>.
+          <strong>Backend-Entwickler</strong> mit <strong>3 Jahren Erfahrung</strong> in <strong>Python</strong> und
+          <strong>Django</strong>, in <strong>Datenbankdesign</strong> und <strong>API-Entwicklung</strong>. Was mich
+          auszeichnet,
+          ist mein <strong>kreativer Hintergrund</strong> in <strong>3D-Animation</strong>, <strong>visuellem
+            Design</strong> und
+          <strong>Musik</strong>, der es mir ermöglicht, Systeme zu entwickeln, die nicht nur
+          <strong>leistungsstark</strong>,
+          sondern auch <strong>intuitiv</strong> und <strong>emotional ansprechend</strong> gestaltet sind.
         </p>
         <p class="about-secondary-text" data-i18n="about.secondary_text">
-          Meine Reise begann mit der Automatisierung komplexer Prozesse...
+          Ich freue mich darauf, <strong>innovativen Teams</strong> beizutreten, in denen <strong>technische
+            Präzision</strong>
+          auf <strong>kreatives Problemlösung</strong> trifft.
         </p>
       </div>
 
-      <div class="about-photo">
-        <img src="images/main/personal-photo.png" alt="Samira Mashti Zadeh" class="personal-photo">
+      <!-- بخش پایین: مهارت‌ها (زیر متن) -->
+      <div class="skills-box">
+        <h3 class="skills-box-title">Schlüsselkompetenzen</h3>
+        <div class="skills-box-tags">
+          <span class="skill-box-tag">Python</span>
+          <span class="skill-box-tag">Django</span>
+          <span class="skill-box-tag">FastAPI</span>
+          <span class="skill-box-tag">Ajax</span>
+          <span class="skill-box-tag">SQL</span>
+          <span class="skill-box-tag">SQLAlchemy</span>
+          <span class="skill-box-tag">MongoDB</span>
+          <span class="skill-box-tag">Git</span>
+          <span class="skill-box-tag">BlenderApp</span>
+          <span class="skill-box-tag">3D-Max</span>
+          <span class="skill-box-tag">Auto-cad</span>
+          <span class="skill-box-tag">Adobe</span>
+          <span class="skill-box-tag">Krita</span>
+          <span class="skill-box-tag">Microsoft-office</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ستون 2: وسط - عکس -->
+    <div class="center-col-photo">
+      <img src="images/main/personal-photo.png" alt="Samira Mashti Zadeh" class="photo-center">
+    </div>
+
+    <!-- ستون 3: راست - تحصیلات -->
+    <div class="right-col-education">
+      <div class="education-box-final">
+        <h3 class="education-box-title">Universitäre Ausbildung</h3>
+        <div class="education-box-list">
+          <div class="edu-box-item">
+            <h4>High School Diploma (Science)</h4>
+            <p>Rezvan High School</p>
+            <span>2014</span>
+          </div>
+          <div class="edu-box-item">
+            <h4>Pre-University Program</h4>
+            <p>Shahid Torki School</p>
+            <span>2015</span>
+          </div>
+          <div class="edu-box-item">
+            <h4>B.A. in Translation Studies</h4>
+            <p>Jihad University</p>
+            <span>2020</span>
+          </div>
+          <div class="edu-box-item current">
+            <h4>M.A. in North American Studies</h4>
+            <p>University of Marburg</p>
+            <span>2025 - Present</span>
+          </div>
+        </div>
       </div>
     </div>
-    </section>
-    <section class="section alt">
-      <h2 class="education-title" style="text-align: center;">Universitäre Ausbildung</h2>
-      <div class="education-item">
-        <div class="education-card">
-          <h4 class="education-degree">High School Diploma (Science)</h4>
-          <p class="education-institution"><strong>Rezvan High School</strong></p>
-          <p class="education-status">Completed</p>
-          <p class="education-date">2014</p>
-        </div>
-        <div class="education-card">
-          <h4 class="education-degree">Pre-University Program</h4>
-          <p class="education-institution"><strong>Shahid Torki School</strong></p>
-          <p class="education-status">Completed</p>
-          <p class="education-date">2015</p>
-        </div>
-        <div class="education-card">
-          <h4 class="education-degree">B.A. in Translation Studies</h4>
-          <p class="education-institution"><strong>Jihad University</strong></p>
-          <p class="education-status">Completed</p>
-          <p class="education-date">2020</p>
-        </div>
-        <div class="education-card">
-          <h4 class="education-degree">M.A. in North American Studies</h4>
-          <p class="education-institution"><strong>University of Marburg</strong></p>
-          <p class="education-status">In Progress</p>
-          <p class="education-date">2025 - Present</p>
-        </div>
-      </div>
-    </section>
+
+  </div>
+</section>
+<!-- حذف یا کامنت کردن بخش جداگانه تحصیلات در انتهای فایل -->
+<!-- <section class="section alt">...</section> -->
     
   <!-- Work History - Dark Section (alternating pattern) -->
   <section id="work" class="section alt">
@@ -293,29 +334,6 @@
       </a>
     </div>
   </section>
-    <!-- Key Skills -->
-  <section class="section alt">
-      <h2 class="skills-title" style="text-align: center;">Schlüsselkompetenzen</h2>
-      <div>
-        <div class="skills-list">
-          <span class="skill-item">Python</span>
-          <span class="skill-item">Django</span>
-          <span class="skill-item">FastAPI</span>
-          <span class="skill-item">Ajax</span>
-          <span class="skill-item">SQL</span>
-          <span class="skill-item">SQLAlchemy</span>
-          <span class="skill-item">MongoDB</span>
-          <span class="skill-item">Git</span>
-          <span class="skill-item">BlenderApp</span>
-          <span class="skill-item">3D-Max</span>
-          <span class="skill-item">Auto-cad</span>
-          <span class="skill-item">Adobe</span>
-          <span class="skill-item">Krita</span>
-          <span class="skill-item">Microsoft-office</span>
-        </div>
-      </div>
-  </section>
-
 
   <!-- بخش گواهینامه‌ها با بارگذاری داینامیک -->
   <section id="certs" class="section">

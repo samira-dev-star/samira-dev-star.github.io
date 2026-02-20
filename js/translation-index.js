@@ -86,9 +86,9 @@ const translations = {
         // About Section
         about: {
             title: "Über mich",
-            subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `Ich bin <strong>Samira Mashti Zadeh</strong>, eine leidenschaftliche Entwicklerin mit Fokus auf <span class="highlight">Full-Stack Entwicklung</span> und <span class="highlight">immersive 3D-Erlebnisse</span>.`,
-            secondary_text: `Meine Reise begann mit der Automatisierung komplexer Prozesse und führte zur Entwicklung von <strong>Scalable Web Applications</strong> und interaktiven 3D-Erfahrungen.`,
+            subtitle: "Wo <strong>Code</strong> auf <strong>Kreativität</strong> trifft",
+            main_text: "<strong>Backend-Entwickler</strong> mit <strong>3 Jahren Erfahrung</strong> in <strong>Python</strong> und <strong>Django</strong>, in <strong>Datenbankdesign</strong> und <strong>API-Entwicklung</strong>. Was mich auszeichnet, ist mein <strong>kreativer Hintergrund</strong> in <strong>3D-Animation</strong>, <strong>visuellem Design</strong> und <strong>Musik</strong>, der es mir ermöglicht, Systeme zu entwickeln, die nicht nur <strong>leistungsstark</strong>, sondern auch <strong>intuitiv</strong> und <strong>emotional ansprechend</strong> gestaltet sind.",
+            secondary_text: "Ich freue mich darauf, <strong>innovativen Teams</strong> beizutreten, in denen <strong>technische Präzision</strong> auf <strong>kreatives Problemlösung</strong> trifft.",
             education_title: "Universitäre Ausbildung",
             education: {
                 high_school: {
@@ -263,6 +263,7 @@ const translations = {
 
         // About Section
         about: {
+            
             title: "About Me",
             subtitle: "Where <strong>Code</strong> Meets <strong>Creativity</strong>",
             main_text: "<strong>Backend developer</strong> with <strong>3 years of experience</strong> in <strong>Python</strong> and <strong>Django</strong>, in <strong>database design</strong> and <strong>API development</strong>. What sets me apart is my <strong>creative background</strong> in <strong>3D animation</strong>, <strong>visual design</strong>, and <strong>music</strong>, allowing me to build systems that are not only <strong>robust</strong> but also <strong>intuitively</strong> and <strong>emotionally resonant</strong>.",
