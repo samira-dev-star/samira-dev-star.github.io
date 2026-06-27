@@ -274,7 +274,7 @@ const translations = {
             subtitle: "Where <strong>Code</strong> Meets <strong>Creativity</strong>",
             main_text: "<strong>Backend developer</strong> with <strong>3 years of experience</strong> in <strong>Python</strong> and <strong>Django</strong>, in <strong>database design</strong> and <strong>API development</strong>. What sets me apart is my <strong>creative background</strong> in <strong>3D animation</strong>, <strong>visual design</strong>, and <strong>music</strong>, allowing me to build systems that are not only <strong>robust</strong> but also <strong>intuitively</strong> and <strong>emotionally resonant</strong>.",
             secondary_text: "Eager to join <strong>innovative teams</strong> where <strong>technical precision</strong> meets <strong>creative problem-solving</strong>.",
-            secondary_text: "Ich freue mich darauf, <strong>innovativen Teams</strong> beizutreten, in denen <strong>technische Präzision</strong> auf <strong>kreatives Problemlösung</strong> trifft.",
+
 
             education_title: "University Education",
             education: {
