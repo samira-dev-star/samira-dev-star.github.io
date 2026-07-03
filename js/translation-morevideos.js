@@ -5,11 +5,6 @@ const translations = {
     de: {
         nav: {
             home: "Start",
-            about: "Über mich",
-            animations: "Animationen",
-            projects: "Projekte",
-            certs: "Zertifikate",
-            contact: "Kontakt",
             lang: "🌐 EN"
         },
         hero: {
@@ -20,12 +15,6 @@ const translations = {
                 animations: "Animationen ansehen",
                 github: "GitHub Profil"
             }
-        },
-        about: {
-            title: "Über mich",
-            subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `Ich bin <strong>Samira Mashti Zadeh</strong>, eine leidenschaftliche Entwicklerin mit Fokus auf <span class="highlight">Full-Stack Entwicklung</span> und <span class="highlight">immersive 3D-Erlebnisse</span>. Mit einem soliden Hintergrund in Softwareentwicklung und einem kreativen Auge für Animation verbinde ich Technologie und Kunst, um innovative Lösungen zu schaffen.`,
-            secondary_text: `Meine Reise begann mit der Automatisierung komplexer Prozesse und führte zur Entwicklung von <strong>Scalable Web Applications</strong> und interaktiven 3D-Erfahrungen, die Grenzen verschieben.`
         },
         animations: {
             title: "Animationen",
@@ -261,12 +250,7 @@ const translations = {
                 github: "GitHub Profile"
             }
         },
-        about: {
-            title: "About Me",
-            subtitle: "Full-Stack Developer · 3D Animator",
-            main_text: `I am <strong>Samira Mashti Zadeh</strong>, a passionate developer focusing on <span class="highlight">Full-Stack Development</span> and <span class="highlight">immersive 3D experiences</span>. With a solid background in software development and a creative eye for animation, I bridge technology and art to create innovative solutions.`,
-            secondary_text: `My journey began with automating complex processes and led to the development of <strong>Scalable Web Applications</strong> and interactive 3D experiences that push boundaries.`
-        },
+
         animations: {
             title: "Animations",
             subtitle: "Motion graphics, web animations and light interactions.",
